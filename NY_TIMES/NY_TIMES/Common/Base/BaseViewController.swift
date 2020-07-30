@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        tableView?.basicSettingsWith(self)
+        setupTableView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -29,5 +29,10 @@ class BaseViewController: UIViewController {
     
     private func setupView() {
         self.view.backgroundColor = UIColor.white
+    }
+    
+    private func setupTableView() {
+        tableView?.basicSettingsWith(self)
+        tableView?.register(UINib(nibName: NewsCell.cellID, bundle: nil), forCellReuseIdentifier: NewsCell.cellID)
     }
 }

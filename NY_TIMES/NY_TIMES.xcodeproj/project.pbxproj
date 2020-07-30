@@ -57,6 +57,10 @@
 		3A71C09A24D2F76A0016B285 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C09424D2F76A0016B285 /* FavoritesInteractor.swift */; };
 		3A71C09B24D2F76A0016B285 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C09524D2F76A0016B285 /* FavoritesViewController.xib */; };
 		3A71C09C24D2F76A0016B285 /* FavoritesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C09624D2F76A0016B285 /* FavoritesWireframe.swift */; };
+		3A71C0A124D302D30016B285 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C09F24D302D30016B285 /* NewsCell.swift */; };
+		3A71C0A224D302D30016B285 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C0A024D302D30016B285 /* NewsCell.xib */; };
+		3A71C0A724D30A930016B285 /* NewsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C0A524D30A930016B285 /* NewsDetailCell.swift */; };
+		3A71C0A824D30A930016B285 /* NewsDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C0A624D30A930016B285 /* NewsDetailCell.xib */; };
 		3AE6BA5F24D2A2E4000E3598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA5E24D2A2E4000E3598 /* AppDelegate.swift */; };
 		3AE6BA6124D2A2E4000E3598 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA6024D2A2E4000E3598 /* SceneDelegate.swift */; };
 		3AE6BA6924D2A2E4000E3598 /* NY_TIMES.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA6724D2A2E4000E3598 /* NY_TIMES.xcdatamodeld */; };
@@ -115,6 +119,10 @@
 		3A71C09424D2F76A0016B285 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
 		3A71C09524D2F76A0016B285 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		3A71C09624D2F76A0016B285 /* FavoritesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWireframe.swift; sourceTree = "<group>"; };
+		3A71C09F24D302D30016B285 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		3A71C0A024D302D30016B285 /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		3A71C0A524D30A930016B285 /* NewsDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailCell.swift; sourceTree = "<group>"; };
+		3A71C0A624D30A930016B285 /* NewsDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailCell.xib; sourceTree = "<group>"; };
 		3AE6BA5B24D2A2E4000E3598 /* NY_TIMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NY_TIMES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE6BA5E24D2A2E4000E3598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE6BA6024D2A2E4000E3598 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +197,7 @@
 		3A71C02F24D2B5BA0016B285 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3A71C09D24D302860016B285 /* Views */,
 				3A71C08B24D2E78C0016B285 /* Enums */,
 				3A71C04A24D2BF100016B285 /* Base */,
 				3A71C02924D2B49D0016B285 /* Extensions */,
@@ -320,6 +329,41 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		3A71C09D24D302860016B285 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A71C09E24D302940016B285 /* TableViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A71C09E24D302940016B285 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				3A71C0A424D309E70016B285 /* NewsDetailCell */,
+				3A71C0A324D303E20016B285 /* NewsCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		3A71C0A324D303E20016B285 /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A71C09F24D302D30016B285 /* NewsCell.swift */,
+				3A71C0A024D302D30016B285 /* NewsCell.xib */,
+			);
+			path = NewsCell;
+			sourceTree = "<group>";
+		};
+		3A71C0A424D309E70016B285 /* NewsDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A71C0A524D30A930016B285 /* NewsDetailCell.swift */,
+				3A71C0A624D30A930016B285 /* NewsDetailCell.xib */,
+			);
+			path = NewsDetailCell;
+			sourceTree = "<group>";
+		};
 		3AE6BA5224D2A2E4000E3598 = {
 			isa = PBXGroup;
 			children = (
@@ -409,10 +453,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A71C06B24D2CCA10016B285 /* SharedViewController.xib in Resources */,
+				3A71C0A824D30A930016B285 /* NewsDetailCell.xib in Resources */,
 				3AE6BA6E24D2A2E7000E3598 /* LaunchScreen.storyboard in Resources */,
 				3A71C08924D2E2550016B285 /* DetailViewController.xib in Resources */,
 				3A71C07824D2CCDF0016B285 /* ViewedViewController.xib in Resources */,
 				3A71C04824D2B74B0016B285 /* MainViewController.xib in Resources */,
+				3A71C0A224D302D30016B285 /* NewsCell.xib in Resources */,
 				3A71C05D24D2CC590016B285 /* EmailedViewController.xib in Resources */,
 				3A71C09B24D2F76A0016B285 /* FavoritesViewController.xib in Resources */,
 				3AE6BA6B24D2A2E7000E3598 /* Assets.xcassets in Resources */,
@@ -459,12 +505,14 @@
 				3A71C09C24D2F76A0016B285 /* FavoritesWireframe.swift in Sources */,
 				3A71C06924D2CCA10016B285 /* SharedViewController.swift in Sources */,
 				3A71C04424D2B74B0016B285 /* MainInterfaces.swift in Sources */,
+				3A71C0A724D30A930016B285 /* NewsDetailCell.swift in Sources */,
 				3A71C05C24D2CC590016B285 /* EmailedInteractor.swift in Sources */,
 				3A71C07524D2CCDF0016B285 /* ViewedPresenter.swift in Sources */,
 				3A71C05B24D2CC590016B285 /* EmailedViewController.swift in Sources */,
 				3A71C04E24D2BF360016B285 /* BaseViewController.swift in Sources */,
 				3A71C06824D2CCA00016B285 /* SharedPresenter.swift in Sources */,
 				3A71C08724D2E2550016B285 /* DetailViewController.swift in Sources */,
+				3A71C0A124D302D30016B285 /* NewsCell.swift in Sources */,
 				3A71C04F24D2BF360016B285 /* BaseNavigationController.swift in Sources */,
 				3A71C07624D2CCDF0016B285 /* ViewedViewController.swift in Sources */,
 				3A71C05924D2CC590016B285 /* EmailedInterfaces.swift in Sources */,

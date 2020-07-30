@@ -21,12 +21,42 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView()
         presenter.viewDidLoad()
+    }
+    
+    private func setupTableView() {
+        tableView?.basicSettingsWith(self)
+        tableView?.register(UINib(nibName: NewsDetailCell.cellID, bundle: nil), forCellReuseIdentifier: NewsDetailCell.cellID)
     }
 
 }
 
-// MARK: - Extensions -
+//MARK: - UITableViewDataSource
+extension DetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfItems(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsDetailCell.cellID, for: indexPath) as? NewsDetailCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+    
+}
+
+//MARK: - UITableViewDelegate
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+
+// MARK: - DetailViewInterface
 
 extension DetailViewController: DetailViewInterface {
     func setNavigationTitle(text: String) {

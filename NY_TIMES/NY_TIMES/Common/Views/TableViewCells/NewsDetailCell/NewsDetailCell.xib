@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewsDetailCell" rowHeight="353" id="KGk-i7-Jjw" customClass="NewsDetailCell" customModule="NY_TIMES" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="353"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="353"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVg-ve-mMC">
+                        <rect key="frame" x="20" y="20" width="280" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="53s-I4-pdQ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubv-fx-AsU">
+                        <rect key="frame" x="20" y="228" width="280" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-p0-eDf">
+                        <rect key="frame" x="20" y="256" width="280" height="86"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="gVg-ve-mMC" secondAttribute="trailing" constant="20" id="4bQ-Dj-5IM"/>
+                    <constraint firstItem="NJT-p0-eDf" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="57n-zA-afN"/>
+                    <constraint firstItem="ubv-fx-AsU" firstAttribute="trailing" secondItem="gVg-ve-mMC" secondAttribute="trailing" id="7v4-Up-JYE"/>
+                    <constraint firstItem="NJT-p0-eDf" firstAttribute="trailing" secondItem="gVg-ve-mMC" secondAttribute="trailing" id="TKT-gG-ad8"/>
+                    <constraint firstItem="NJT-p0-eDf" firstAttribute="leading" secondItem="gVg-ve-mMC" secondAttribute="leading" id="We6-c3-9Xy"/>
+                    <constraint firstItem="ubv-fx-AsU" firstAttribute="top" secondItem="gVg-ve-mMC" secondAttribute="bottom" constant="8" id="afD-qZ-iTG"/>
+                    <constraint firstItem="ubv-fx-AsU" firstAttribute="leading" secondItem="gVg-ve-mMC" secondAttribute="leading" id="esQ-B7-bDX"/>
+                    <constraint firstItem="gVg-ve-mMC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="lyk-pV-e4F"/>
+                    <constraint firstItem="gVg-ve-mMC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="nRQ-IX-Mly"/>
+                    <constraint firstItem="NJT-p0-eDf" firstAttribute="top" secondItem="ubv-fx-AsU" secondAttribute="bottom" constant="7.5" id="wvn-lp-Fbr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="3000" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <point key="canvasLocation" x="140.57971014492756" y="213.28125"/>
+        </tableViewCell>
+    </objects>
+</document>

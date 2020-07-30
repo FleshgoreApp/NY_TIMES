@@ -36,4 +36,8 @@ extension DetailPresenter: DetailPresenterInterface {
     func viewDidLoad() {
         view.setNavigationTitle(text: news?.title ?? "")
     }
+    
+    func numberOfItems(in section: Int) -> Int {
+        return 1
+    }
 }
