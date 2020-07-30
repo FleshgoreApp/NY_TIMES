@@ -9,6 +9,7 @@
 import UIKit
 
 protocol WireframeInterface: class {
+    func navigate(to option: NewsNavigationOption)
 }
 
 class BaseWireframe {
@@ -26,7 +27,13 @@ class BaseWireframe {
 }
 
 extension BaseWireframe: WireframeInterface {
-
+    func navigate(to option: NewsNavigationOption) {
+        
+        switch option {
+        case .details(let news):
+            self.navigationController?.pushWireframe(DetailWireframe(news: news), animated: true)
+        }
+    }
 }
 
 extension BaseWireframe {

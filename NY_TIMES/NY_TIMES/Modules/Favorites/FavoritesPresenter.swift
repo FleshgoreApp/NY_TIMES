@@ -1,5 +1,5 @@
 //
-//  ViewedPresenter.swift
+//  FavoritesPresenter.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
@@ -10,21 +10,19 @@
 
 import Foundation
 
-final class ViewedPresenter {
+final class FavoritesPresenter {
 
     // MARK: - Private properties -
 
-    private unowned let view: ViewedViewInterface
-    private let interactor: ViewedInteractorInterface
-    private let wireframe: ViewedWireframeInterface
-
-    var news = [News(id: 25, title: "title25"),
-                News(id: 38, title: "title38"),
-                News(id: 45, title: "title45")]
+    private unowned let view: FavoritesViewInterface
+    private let interactor: FavoritesInteractorInterface
+    private let wireframe: FavoritesWireframeInterface
     
+    var news = [News(id: 100, title: "fav news")]
+
     // MARK: - Lifecycle -
 
-    init(view: ViewedViewInterface, interactor: ViewedInteractorInterface, wireframe: ViewedWireframeInterface) {
+    init(view: FavoritesViewInterface, interactor: FavoritesInteractorInterface, wireframe: FavoritesWireframeInterface) {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
@@ -33,7 +31,7 @@ final class ViewedPresenter {
 
 // MARK: - Extensions -
 
-extension ViewedPresenter: ViewedPresenterInterface {
+extension FavoritesPresenter: FavoritesPresenterInterface {
     
     func viewDidLoad() {
         

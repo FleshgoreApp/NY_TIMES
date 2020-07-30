@@ -28,4 +28,5 @@ final class ViewedWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension ViewedWireframe: ViewedWireframeInterface {
+    
 }

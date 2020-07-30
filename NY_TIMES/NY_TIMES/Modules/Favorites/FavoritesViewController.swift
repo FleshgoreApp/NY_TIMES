@@ -1,5 +1,5 @@
 //
-//  EmailedViewController.swift
+//  FavoritesViewController.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
@@ -10,30 +10,30 @@
 
 import UIKit
 
-final class EmailedViewController: BaseViewController {
+final class FavoritesViewController: BaseViewController {
 
     // MARK: - Public properties -
 
-    var presenter: EmailedPresenterInterface!
+    var presenter: FavoritesPresenterInterface!
 
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.viewDidLoad()
         setupNavigation()
+        presenter.viewDidLoad()
     }
     
     //MARK: - private
     private func setupNavigation() {
-        self.navigationItem.title = VCTitle.kEmailed
+        self.navigationItem.title = VCTitle.kFavorites
     }
 
 }
 
 //MARK: - UITableViewDataSource
-extension EmailedViewController: UITableViewDataSource {
+extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfItems(in: section)
     }
@@ -45,7 +45,7 @@ extension EmailedViewController: UITableViewDataSource {
 }
 
 //MARK: - UITableViewDelegate
-extension EmailedViewController: UITableViewDelegate {
+extension FavoritesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         presenter.didSelectRowAtIndexPath(indexPath)
@@ -53,9 +53,7 @@ extension EmailedViewController: UITableViewDelegate {
     
 }
 
-//MARK: - EmailedViewInterface
-extension EmailedViewController: EmailedViewInterface {
+// MARK: - FavoritesViewInterface
+extension FavoritesViewController: FavoritesViewInterface {
     
 }
-
-

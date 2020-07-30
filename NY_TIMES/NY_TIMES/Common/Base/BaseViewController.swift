@@ -9,11 +9,15 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-       
+    //MARK - properties
+    @IBOutlet weak var tableView: UITableView?
+    
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
+        tableView?.basicSettingsWith(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

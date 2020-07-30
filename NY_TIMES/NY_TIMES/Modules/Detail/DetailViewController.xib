@@ -8,9 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SharedViewController" customModule="NY_TIMES" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="NY_TIMES" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="bDx-GW-dKt" id="VaF-Cr-EQE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +18,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bDx-GW-dKt">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVh-d7-Rkt">
+                    <rect key="frame" x="185" y="437.5" width="44" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bDx-GW-dKt" secondAttribute="trailing" id="QN2-vO-0bj"/>
-                <constraint firstItem="bDx-GW-dKt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XDu-gf-Ahc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bDx-GW-dKt" secondAttribute="bottom" id="jYt-vm-YtL"/>
-                <constraint firstItem="bDx-GW-dKt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vAu-dT-qn7"/>
+                <constraint firstItem="CVh-d7-Rkt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UC2-xX-2ZC"/>
+                <constraint firstItem="CVh-d7-Rkt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xvq-Ld-bOp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="128"/>
+            <point key="canvasLocation" x="139" y="125"/>
         </view>
     </objects>
 </document>

@@ -16,7 +16,7 @@ protocol EmailedWireframeInterface: WireframeInterface {
 protocol EmailedViewInterface: ViewInterface {
 }
 
-protocol EmailedPresenterInterface: PresenterInterface {
+protocol EmailedPresenterInterface: NewsPresenterInterface {
 }
 
 protocol EmailedInteractorInterface: InteractorInterface {

@@ -18,6 +18,9 @@ final class SharedPresenter {
     private let interactor: SharedInteractorInterface
     private let wireframe: SharedWireframeInterface
 
+    var news = [News(id: 25, title: "title25"),
+                News(id: 38, title: "title38")]
+    
     // MARK: - Lifecycle -
 
     init(view: SharedViewInterface, interactor: SharedInteractorInterface, wireframe: SharedWireframeInterface) {
@@ -30,4 +33,16 @@ final class SharedPresenter {
 // MARK: - Extensions -
 
 extension SharedPresenter: SharedPresenterInterface {
+    
+    func viewDidLoad() {
+        
+    }
+    
+    func numberOfItems(in section: Int) -> Int {
+        return news.count
+    }
+    
+    func didSelectRowAtIndexPath(_ indexPath: IndexPath) {
+        wireframe.navigate(to: .details(news[indexPath.row]))
+    }
 }

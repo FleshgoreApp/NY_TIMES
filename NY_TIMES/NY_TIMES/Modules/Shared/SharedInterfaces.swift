@@ -16,7 +16,7 @@ protocol SharedWireframeInterface: WireframeInterface {
 protocol SharedViewInterface: ViewInterface {
 }
 
-protocol SharedPresenterInterface: PresenterInterface {
+protocol SharedPresenterInterface: NewsPresenterInterface {
 }
 
 protocol SharedInteractorInterface: InteractorInterface {

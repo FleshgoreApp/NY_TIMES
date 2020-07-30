@@ -21,17 +21,39 @@ final class ViewedViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter.viewDidLoad()
         setupNavigation()
     }
     
     //MARK: - private
     private func setupNavigation() {
-        self.navigationItem.title = "Viewed"
+        self.navigationItem.title = VCTitle.kViewed
     }
 
 }
 
-// MARK: - Extensions -
+//MARK: - UITableViewDataSource
+extension ViewedViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfItems(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+}
 
+//MARK: - UITableViewDelegate
+extension ViewedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter.didSelectRowAtIndexPath(indexPath)
+    }
+    
+}
+
+// MARK: - ViewedViewInterface
 extension ViewedViewController: ViewedViewInterface {
+    
 }

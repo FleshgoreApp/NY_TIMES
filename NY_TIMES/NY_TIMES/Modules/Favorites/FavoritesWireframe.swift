@@ -1,5 +1,5 @@
 //
-//  SharedWireframe.swift
+//  FavoritesWireframe.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
@@ -10,16 +10,16 @@
 
 import UIKit
 
-final class SharedWireframe: BaseWireframe {
+final class FavoritesWireframe: BaseWireframe {
 
     // MARK: - Module setup -
 
     init() {
-        let moduleViewController = SharedViewController()
+        let moduleViewController = FavoritesViewController()
         super.init(viewController: moduleViewController)
 
-        let interactor = SharedInteractor()
-        let presenter = SharedPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
+        let interactor = FavoritesInteractor()
+        let presenter = FavoritesPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }
 
@@ -27,6 +27,5 @@ final class SharedWireframe: BaseWireframe {
 
 // MARK: - Extensions -
 
-extension SharedWireframe: SharedWireframeInterface {
-    
+extension FavoritesWireframe: FavoritesWireframeInterface {
 }

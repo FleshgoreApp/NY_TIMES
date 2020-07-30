@@ -13,9 +13,10 @@ import UIKit
 final class MainViewController: BaseTabBarController {
 
     // MARK: - properties
-    private let tabBarTitles = ["Emailed",
-                                "Shared",
-                                "Viewed"]
+    private let tabBarTitles = [VCTitle.kEmailed,
+                                VCTitle.kShared,
+                                VCTitle.kViewed,
+                                VCTitle.kFavorites]
     
     var presenter: MainPresenterInterface!
 
@@ -38,7 +39,10 @@ final class MainViewController: BaseTabBarController {
         let viewed = BaseNavigationController()
         viewed.setRootWireframe(ViewedWireframe())
         
-        return [emailed, shared, viewed]
+        let favorites = BaseNavigationController()
+        favorites.setRootWireframe(FavoritesWireframe())
+        
+        return [emailed, shared, viewed, favorites]
     }
     
     private func setupTabBarItems() {

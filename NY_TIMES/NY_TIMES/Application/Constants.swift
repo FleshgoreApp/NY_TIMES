@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct VCTitle {
+    static let kEmailed = "Emailed"
+    static let kShared  = "Shared"
+    static let kViewed  = "Viewed"
+    static let kFavorites = "Favorites"
+}

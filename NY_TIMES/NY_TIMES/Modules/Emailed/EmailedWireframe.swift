@@ -28,4 +28,5 @@ final class EmailedWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension EmailedWireframe: EmailedWireframeInterface {
+    
 }

@@ -10,6 +10,8 @@ import UIKit
 
 final class BaseNavigationController: UINavigationController {
     
+    private let color = UIColor.gray
+    
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,8 @@ final class BaseNavigationController: UINavigationController {
     //MARK: - Private
     private func basicSettings() {
         self.navigationBar.shadowImage = UIImage()
-        UINavigationBar.appearance().tintColor = UIColor.red
+        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
+        UINavigationBar.appearance().tintColor = color
     }
     
 }

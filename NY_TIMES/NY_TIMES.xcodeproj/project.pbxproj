@@ -41,6 +41,22 @@
 		3A71C07724D2CCDF0016B285 /* ViewedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07124D2CCDF0016B285 /* ViewedInteractor.swift */; };
 		3A71C07824D2CCDF0016B285 /* ViewedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C07224D2CCDF0016B285 /* ViewedViewController.xib */; };
 		3A71C07924D2CCDF0016B285 /* ViewedWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07324D2CCDF0016B285 /* ViewedWireframe.swift */; };
+		3A71C07C24D2D6180016B285 /* UIViewController+loadFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07A24D2D6180016B285 /* UIViewController+loadFromNib.swift */; };
+		3A71C07D24D2D6180016B285 /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07B24D2D6180016B285 /* TableView+Extension.swift */; };
+		3A71C08524D2E2550016B285 /* DetailInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07F24D2E2550016B285 /* DetailInterfaces.swift */; };
+		3A71C08624D2E2550016B285 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C08024D2E2550016B285 /* DetailPresenter.swift */; };
+		3A71C08724D2E2550016B285 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C08124D2E2550016B285 /* DetailViewController.swift */; };
+		3A71C08824D2E2550016B285 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C08224D2E2550016B285 /* DetailInteractor.swift */; };
+		3A71C08924D2E2550016B285 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C08324D2E2550016B285 /* DetailViewController.xib */; };
+		3A71C08A24D2E2550016B285 /* DetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C08424D2E2550016B285 /* DetailWireframe.swift */; };
+		3A71C08D24D2E7A30016B285 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C08C24D2E7A30016B285 /* Enums.swift */; };
+		3A71C08F24D2E7E80016B285 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C08E24D2E7E80016B285 /* News.swift */; };
+		3A71C09724D2F76A0016B285 /* FavoritesInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C09124D2F76A0016B285 /* FavoritesInterfaces.swift */; };
+		3A71C09824D2F76A0016B285 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C09224D2F76A0016B285 /* FavoritesPresenter.swift */; };
+		3A71C09924D2F76A0016B285 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C09324D2F76A0016B285 /* FavoritesViewController.swift */; };
+		3A71C09A24D2F76A0016B285 /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C09424D2F76A0016B285 /* FavoritesInteractor.swift */; };
+		3A71C09B24D2F76A0016B285 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C09524D2F76A0016B285 /* FavoritesViewController.xib */; };
+		3A71C09C24D2F76A0016B285 /* FavoritesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C09624D2F76A0016B285 /* FavoritesWireframe.swift */; };
 		3AE6BA5F24D2A2E4000E3598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA5E24D2A2E4000E3598 /* AppDelegate.swift */; };
 		3AE6BA6124D2A2E4000E3598 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA6024D2A2E4000E3598 /* SceneDelegate.swift */; };
 		3AE6BA6924D2A2E4000E3598 /* NY_TIMES.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA6724D2A2E4000E3598 /* NY_TIMES.xcdatamodeld */; };
@@ -83,6 +99,22 @@
 		3A71C07124D2CCDF0016B285 /* ViewedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedInteractor.swift; sourceTree = "<group>"; };
 		3A71C07224D2CCDF0016B285 /* ViewedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewedViewController.xib; sourceTree = "<group>"; };
 		3A71C07324D2CCDF0016B285 /* ViewedWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedWireframe.swift; sourceTree = "<group>"; };
+		3A71C07A24D2D6180016B285 /* UIViewController+loadFromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadFromNib.swift"; sourceTree = "<group>"; };
+		3A71C07B24D2D6180016B285 /* TableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
+		3A71C07F24D2E2550016B285 /* DetailInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaces.swift; sourceTree = "<group>"; };
+		3A71C08024D2E2550016B285 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		3A71C08124D2E2550016B285 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3A71C08224D2E2550016B285 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		3A71C08324D2E2550016B285 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		3A71C08424D2E2550016B285 /* DetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWireframe.swift; sourceTree = "<group>"; };
+		3A71C08C24D2E7A30016B285 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		3A71C08E24D2E7E80016B285 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		3A71C09124D2F76A0016B285 /* FavoritesInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInterfaces.swift; sourceTree = "<group>"; };
+		3A71C09224D2F76A0016B285 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		3A71C09324D2F76A0016B285 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		3A71C09424D2F76A0016B285 /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		3A71C09524D2F76A0016B285 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		3A71C09624D2F76A0016B285 /* FavoritesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWireframe.swift; sourceTree = "<group>"; };
 		3AE6BA5B24D2A2E4000E3598 /* NY_TIMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NY_TIMES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE6BA5E24D2A2E4000E3598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE6BA6024D2A2E4000E3598 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +162,7 @@
 		3A71C02824D2B47D0016B285 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3A71C08E24D2E7E80016B285 /* News.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +170,8 @@
 		3A71C02924D2B49D0016B285 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3A71C07B24D2D6180016B285 /* TableView+Extension.swift */,
+				3A71C07A24D2D6180016B285 /* UIViewController+loadFromNib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +189,7 @@
 		3A71C02F24D2B5BA0016B285 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3A71C08B24D2E78C0016B285 /* Enums */,
 				3A71C04A24D2BF100016B285 /* Base */,
 				3A71C02924D2B49D0016B285 /* Extensions */,
 				3A71C02824D2B47D0016B285 /* Models */,
@@ -169,6 +205,8 @@
 				3A71C05F24D2CC620016B285 /* Emailed */,
 				3A71C06024D2CC8D0016B285 /* Shared */,
 				3A71C06D24D2CCC70016B285 /* Viewed */,
+				3A71C09024D2F7490016B285 /* Favorites */,
+				3A71C07E24D2E2380016B285 /* Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -246,6 +284,40 @@
 				3A71C07324D2CCDF0016B285 /* ViewedWireframe.swift */,
 			);
 			path = Viewed;
+			sourceTree = "<group>";
+		};
+		3A71C07E24D2E2380016B285 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3A71C07F24D2E2550016B285 /* DetailInterfaces.swift */,
+				3A71C08024D2E2550016B285 /* DetailPresenter.swift */,
+				3A71C08124D2E2550016B285 /* DetailViewController.swift */,
+				3A71C08224D2E2550016B285 /* DetailInteractor.swift */,
+				3A71C08324D2E2550016B285 /* DetailViewController.xib */,
+				3A71C08424D2E2550016B285 /* DetailWireframe.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3A71C08B24D2E78C0016B285 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				3A71C08C24D2E7A30016B285 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		3A71C09024D2F7490016B285 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				3A71C09124D2F76A0016B285 /* FavoritesInterfaces.swift */,
+				3A71C09224D2F76A0016B285 /* FavoritesPresenter.swift */,
+				3A71C09324D2F76A0016B285 /* FavoritesViewController.swift */,
+				3A71C09424D2F76A0016B285 /* FavoritesInteractor.swift */,
+				3A71C09524D2F76A0016B285 /* FavoritesViewController.xib */,
+				3A71C09624D2F76A0016B285 /* FavoritesWireframe.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		3AE6BA5224D2A2E4000E3598 = {
@@ -338,9 +410,11 @@
 			files = (
 				3A71C06B24D2CCA10016B285 /* SharedViewController.xib in Resources */,
 				3AE6BA6E24D2A2E7000E3598 /* LaunchScreen.storyboard in Resources */,
+				3A71C08924D2E2550016B285 /* DetailViewController.xib in Resources */,
 				3A71C07824D2CCDF0016B285 /* ViewedViewController.xib in Resources */,
 				3A71C04824D2B74B0016B285 /* MainViewController.xib in Resources */,
 				3A71C05D24D2CC590016B285 /* EmailedViewController.xib in Resources */,
+				3A71C09B24D2F76A0016B285 /* FavoritesViewController.xib in Resources */,
 				3AE6BA6B24D2A2E7000E3598 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +426,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A71C08D24D2E7A30016B285 /* Enums.swift in Sources */,
+				3A71C09724D2F76A0016B285 /* FavoritesInterfaces.swift in Sources */,
 				3A71C07424D2CCDF0016B285 /* ViewedInterfaces.swift in Sources */,
 				3A71C04924D2B74B0016B285 /* MainWireframe.swift in Sources */,
 				3A71C03924D2B6740016B285 /* FormatterInterface.swift in Sources */,
@@ -359,18 +435,28 @@
 				3A71C05024D2BF360016B285 /* BaseTabBarController.swift in Sources */,
 				3A71C04624D2B74B0016B285 /* MainViewController.swift in Sources */,
 				3AE6BA6924D2A2E4000E3598 /* NY_TIMES.xcdatamodeld in Sources */,
+				3A71C08624D2E2550016B285 /* DetailPresenter.swift in Sources */,
 				3A71C06A24D2CCA10016B285 /* SharedInteractor.swift in Sources */,
 				3A71C03824D2B6740016B285 /* BaseWireframe.swift in Sources */,
 				3AE6BA5F24D2A2E4000E3598 /* AppDelegate.swift in Sources */,
+				3A71C07C24D2D6180016B285 /* UIViewController+loadFromNib.swift in Sources */,
+				3A71C09824D2F76A0016B285 /* FavoritesPresenter.swift in Sources */,
 				3A71C04724D2B74B0016B285 /* MainInteractor.swift in Sources */,
 				3A71C03C24D2B6740016B285 /* ViewInterface.swift in Sources */,
 				3A71C03B24D2B6740016B285 /* PresenterInterface.swift in Sources */,
+				3A71C09A24D2F76A0016B285 /* FavoritesInteractor.swift in Sources */,
 				3A71C03D24D2B6740016B285 /* InteractorInterface.swift in Sources */,
 				3A71C05E24D2CC590016B285 /* EmailedWireframe.swift in Sources */,
+				3A71C08F24D2E7E80016B285 /* News.swift in Sources */,
+				3A71C08524D2E2550016B285 /* DetailInterfaces.swift in Sources */,
 				3A71C06724D2CCA00016B285 /* SharedInterfaces.swift in Sources */,
 				3A71C04524D2B74B0016B285 /* MainPresenter.swift in Sources */,
 				3A71C07724D2CCDF0016B285 /* ViewedInteractor.swift in Sources */,
+				3A71C08A24D2E2550016B285 /* DetailWireframe.swift in Sources */,
+				3A71C08824D2E2550016B285 /* DetailInteractor.swift in Sources */,
 				3AE6BA6124D2A2E4000E3598 /* SceneDelegate.swift in Sources */,
+				3A71C09924D2F76A0016B285 /* FavoritesViewController.swift in Sources */,
+				3A71C09C24D2F76A0016B285 /* FavoritesWireframe.swift in Sources */,
 				3A71C06924D2CCA10016B285 /* SharedViewController.swift in Sources */,
 				3A71C04424D2B74B0016B285 /* MainInterfaces.swift in Sources */,
 				3A71C05C24D2CC590016B285 /* EmailedInteractor.swift in Sources */,
@@ -378,10 +464,12 @@
 				3A71C05B24D2CC590016B285 /* EmailedViewController.swift in Sources */,
 				3A71C04E24D2BF360016B285 /* BaseViewController.swift in Sources */,
 				3A71C06824D2CCA00016B285 /* SharedPresenter.swift in Sources */,
+				3A71C08724D2E2550016B285 /* DetailViewController.swift in Sources */,
 				3A71C04F24D2BF360016B285 /* BaseNavigationController.swift in Sources */,
 				3A71C07624D2CCDF0016B285 /* ViewedViewController.swift in Sources */,
 				3A71C05924D2CC590016B285 /* EmailedInterfaces.swift in Sources */,
 				3A71C02E24D2B5970016B285 /* Constants.swift in Sources */,
+				3A71C07D24D2D6180016B285 /* TableView+Extension.swift in Sources */,
 				3A71C06C24D2CCA10016B285 /* SharedWireframe.swift in Sources */,
 				3A71C05A24D2CC590016B285 /* EmailedPresenter.swift in Sources */,
 				3A71C03A24D2B6740016B285 /* UIStoryboardExtension.swift in Sources */,

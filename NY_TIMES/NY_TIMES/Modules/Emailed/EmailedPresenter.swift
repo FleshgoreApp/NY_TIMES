@@ -17,6 +17,8 @@ final class EmailedPresenter {
     private unowned let view: EmailedViewInterface
     private let interactor: EmailedInteractorInterface
     private let wireframe: EmailedWireframeInterface
+    
+    var news = [News(id: 25, title: "title25")]
 
     // MARK: - Lifecycle -
 
@@ -27,7 +29,18 @@ final class EmailedPresenter {
     }
 }
 
-// MARK: - Extensions -
-
+// MARK: - EmailedPresenterInterface
 extension EmailedPresenter: EmailedPresenterInterface {
+    
+    func viewDidLoad() {
+        
+    }
+    
+    func numberOfItems(in section: Int) -> Int {
+        return news.count
+    }
+    
+    func didSelectRowAtIndexPath(_ indexPath: IndexPath) {
+        wireframe.navigate(to: .details(news[indexPath.row]))
+    }
 }

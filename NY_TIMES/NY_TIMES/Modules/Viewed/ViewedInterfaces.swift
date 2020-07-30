@@ -16,7 +16,7 @@ protocol ViewedWireframeInterface: WireframeInterface {
 protocol ViewedViewInterface: ViewInterface {
 }
 
-protocol ViewedPresenterInterface: PresenterInterface {
+protocol ViewedPresenterInterface: NewsPresenterInterface {
 }
 
 protocol ViewedInteractorInterface: InteractorInterface {
