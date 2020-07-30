@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  EmailedViewController.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
@@ -10,21 +10,28 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class EmailedViewController: BaseViewController {
 
     // MARK: - Public properties -
 
-    var presenter: MainPresenterInterface!
+    var presenter: EmailedPresenterInterface!
 
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigation()
+    }
+    
+    //MARK: - private
+    private func setupNavigation() {
+        self.navigationItem.title = "Emailed"
     }
 
 }
 
 // MARK: - Extensions -
 
-extension MainViewController: MainViewInterface {
+extension EmailedViewController: EmailedViewInterface {
 }

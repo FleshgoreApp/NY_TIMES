@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  BaseWireframe.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
