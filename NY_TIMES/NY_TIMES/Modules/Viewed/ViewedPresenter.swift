@@ -18,9 +18,7 @@ final class ViewedPresenter {
     private let interactor: ViewedInteractorInterface
     private let wireframe: ViewedWireframeInterface
 
-    var news = [News(id: 25, title: "title25"),
-                News(id: 38, title: "title38"),
-                News(id: 45, title: "title45")]
+    var news = [News]()
     
     // MARK: - Lifecycle -
 

@@ -53,6 +53,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <inset key="separatorInset" minX="3000" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="newsImageView" destination="gVg-ve-mMC" id="s6P-vu-Nao"/>
+                <outlet property="newsTextView" destination="NJT-p0-eDf" id="sVr-UN-qJm"/>
+                <outlet property="newsTitleLabel" destination="ubv-fx-AsU" id="oGA-NL-Cp8"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="213.28125"/>
         </tableViewCell>
     </objects>

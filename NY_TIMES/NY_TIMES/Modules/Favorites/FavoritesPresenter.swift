@@ -18,7 +18,7 @@ final class FavoritesPresenter {
     private let interactor: FavoritesInteractorInterface
     private let wireframe: FavoritesWireframeInterface
     
-    var news = [News(id: 100, title: "fav news")]
+    var news = [News]()
 
     // MARK: - Lifecycle -
 

@@ -18,7 +18,7 @@ final class EmailedPresenter {
     private let interactor: EmailedInteractorInterface
     private let wireframe: EmailedWireframeInterface
     
-    var news = [News(id: 25, title: "title25")]
+    var news = [News]()
 
     // MARK: - Lifecycle -
 

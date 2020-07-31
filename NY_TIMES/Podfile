@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'NY_TIMES' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for NY_TIMES
+  pod 'JSONParsing', '~> 0.2'
+  pod 'AlamofireImage', '~> 3.2'
+
+end

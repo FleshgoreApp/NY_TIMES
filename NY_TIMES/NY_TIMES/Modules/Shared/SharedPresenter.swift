@@ -18,8 +18,7 @@ final class SharedPresenter {
     private let interactor: SharedInteractorInterface
     private let wireframe: SharedWireframeInterface
 
-    var news = [News(id: 25, title: "title25"),
-                News(id: 38, title: "title38")]
+    var news = [News]()
     
     // MARK: - Lifecycle -
 

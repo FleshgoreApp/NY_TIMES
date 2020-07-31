@@ -12,6 +12,10 @@ class NewsDetailCell: UITableViewCell {
 
     static let cellID = "NewsDetailCell"
     
+    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var newsTitleLabel: UILabel!
+    @IBOutlet weak var newsTextView: UITextView!
+    
     override func awakeFromNib() {
         
     }

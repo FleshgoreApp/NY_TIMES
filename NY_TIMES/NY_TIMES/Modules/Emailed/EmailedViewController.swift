@@ -23,6 +23,10 @@ final class EmailedViewController: BaseViewController {
         
         presenter.viewDidLoad()
         setupNavigation()
+        Network(baseUrl: API.kUrlBaseString).getNews(category: .viewed, period: 1) { news, error in
+            //print(news)
+            //print(error)
+        }
     }
     
     //MARK: - private
