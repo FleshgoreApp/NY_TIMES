@@ -31,13 +31,13 @@ final class MainViewController: BaseTabBarController {
     
     private func setVCs() -> [UIViewController] {
         let emailed = BaseNavigationController()
-        emailed.setRootWireframe(EmailedWireframe())
+        emailed.setRootWireframe(NewsWireframe(type: .emailed))
         
         let shared = BaseNavigationController()
-        shared.setRootWireframe(SharedWireframe())
+        shared.setRootWireframe(NewsWireframe(type: .shared))
         
         let viewed = BaseNavigationController()
-        viewed.setRootWireframe(ViewedWireframe())
+        viewed.setRootWireframe(NewsWireframe(type: .viewed))
         
         let favorites = BaseNavigationController()
         favorites.setRootWireframe(FavoritesWireframe())

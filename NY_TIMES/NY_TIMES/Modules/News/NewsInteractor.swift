@@ -1,5 +1,5 @@
 //
-//  SharedInteractor.swift
+//  NewsInteractor.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
@@ -10,13 +10,13 @@
 
 import Foundation
 
-final class SharedInteractor {
+final class NewsInteractor {
     var network = Network(baseUrl: API.kUrlBaseString)
 }
 
 // MARK: - Extensions -
 
-extension SharedInteractor: SharedInteractorInterface {
+extension NewsInteractor: NewsInteractorInterface {
     func getNewsBy(category: NewsCategory, period: Int, completion: @escaping NewsResponseBlock) {
         network.getNewsBy(category: category, period: period) { (news, error) in
             completion(news, error)

@@ -37,7 +37,7 @@ extension FavoritesPresenter: FavoritesPresenterInterface {
     }
     
     func viewDidLoad() {
-        
+        view.setNavigationTitle(VCTitle.kFavorites)
     }
     
     func numberOfItems(in section: Int) -> Int {

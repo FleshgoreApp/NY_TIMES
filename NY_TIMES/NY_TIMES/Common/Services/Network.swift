@@ -37,7 +37,7 @@ final class Network: BaseNetwork {
     func getNewsBy(category: NewsCategory, period: Int, completion:@escaping NewsResponseBlock) {
         getData(endPoint: category.getUrlforPeriodOf(days: period)) { response in
             guard let data = response?.data else {
-                completion(nil, response?.error)//TODO
+                completion(nil, response?.error)
                 return
             }
             
@@ -53,8 +53,7 @@ final class Network: BaseNetwork {
                 completion(tempArray, nil)
             }
             catch {
-                completion(nil, response?.error)//TODO
-                print(error)
+                completion(nil, response?.error)
             }
         }
     }

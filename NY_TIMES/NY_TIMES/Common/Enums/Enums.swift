@@ -30,4 +30,17 @@ enum NewsCategory: Int {
             return "Not URL"
         }
     }
+    
+    func getCategoryString() -> String {
+        switch self {
+        case .emailed:
+            return VCTitle.kEmailed
+        case .shared:
+            return VCTitle.kShared
+        case .viewed:
+            return VCTitle.kViewed
+        case .favorite:
+            return VCTitle.kFavorites
+        }
+    }
 }

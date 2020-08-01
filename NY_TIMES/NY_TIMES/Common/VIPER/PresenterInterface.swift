@@ -13,11 +13,3 @@ protocol PresenterInterface: class {
 
 extension PresenterInterface {
 }
-
-protocol NewsPresenterInterface: class {
-    func item(at indexPath: IndexPath) -> NewsViewItemInterface
-    func didSelectRowAtIndexPath(_ indexPath: IndexPath)
-    var news: [News] { get }
-    func viewDidLoad()
-    func numberOfItems(in section: Int) -> Int
-}

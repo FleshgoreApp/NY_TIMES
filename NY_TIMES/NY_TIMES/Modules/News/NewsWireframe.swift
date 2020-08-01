@@ -1,5 +1,5 @@
 //
-//  SharedWireframe.swift
+//  NewsWireframe.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
@@ -10,16 +10,16 @@
 
 import UIKit
 
-final class SharedWireframe: BaseWireframe {
+final class NewsWireframe: BaseWireframe {
 
     // MARK: - Module setup -
 
-    init() {
-        let moduleViewController = SharedViewController()
+    init(type: NewsCategory) {
+        let moduleViewController = NewsViewController()
         super.init(viewController: moduleViewController)
 
-        let interactor = SharedInteractor()
-        let presenter = SharedPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
+        let interactor = NewsInteractor()
+        let presenter = NewsPresenter(view: moduleViewController, interactor: interactor, wireframe: self, type: type)
         moduleViewController.presenter = presenter
     }
 
@@ -27,6 +27,6 @@ final class SharedWireframe: BaseWireframe {
 
 // MARK: - Extensions -
 
-extension SharedWireframe: SharedWireframeInterface {
+extension NewsWireframe: NewsWireframeInterface {
     
 }

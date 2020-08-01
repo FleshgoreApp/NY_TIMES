@@ -1,5 +1,5 @@
 //
-//  ViewedViewController.swift
+//  NewsViewController.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
@@ -10,14 +10,14 @@
 
 import UIKit
 
-final class ViewedViewController: BaseViewController {
-
+final class NewsViewController: BaseViewController {
+    
     // MARK: - properties
     lazy var activityView: CustomActivityIndicatorView = {
         return CustomActivityIndicatorView(parentView: self.view)
     }()
 
-    var presenter: ViewedPresenterInterface!
+    var presenter: NewsPresenterInterface!
 
     // MARK: - Lifecycle -
 
@@ -25,18 +25,12 @@ final class ViewedViewController: BaseViewController {
         super.viewDidLoad()
         
         presenter.viewDidLoad()
-        setupNavigation()
-    }
-    
-    //MARK: - private
-    private func setupNavigation() {
-        self.navigationItem.title = VCTitle.kViewed
     }
 
 }
 
 //MARK: - UITableViewDataSource
-extension ViewedViewController: UITableViewDataSource {
+extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfItems(in: section)
     }
@@ -55,14 +49,14 @@ extension ViewedViewController: UITableViewDataSource {
 }
 
 //MARK: - NewsCellDelegate
-extension ViewedViewController: NewsCellDelegate {
+extension NewsViewController: NewsCellDelegate {
     func favoritesButtonDidClick(_ sender: UIButton) {
-        print("ViewedViewController")
+        
     }
 }
 
 //MARK: - UITableViewDelegate
-extension ViewedViewController: UITableViewDelegate {
+extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -74,8 +68,12 @@ extension ViewedViewController: UITableViewDelegate {
     
 }
 
-// MARK: - ViewedViewInterface
-extension ViewedViewController: ViewedViewInterface {
+//MARK: - EmailedViewInterface
+extension NewsViewController: NewsViewInterface {
+    func setNavigationTitle(_ title: String) {
+        self.navigationItem.title = title
+    }
+    
     func reloadData() {
         tableView?.reloadDataOnMainQueue()
     }
@@ -88,3 +86,5 @@ extension ViewedViewController: ViewedViewInterface {
         showAlertWithOkButton(title: title, message: message)
     }
 }
+
+

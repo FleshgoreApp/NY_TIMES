@@ -24,24 +24,12 @@
 		3A71C04E24D2BF360016B285 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C04B24D2BF360016B285 /* BaseViewController.swift */; };
 		3A71C04F24D2BF360016B285 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C04C24D2BF360016B285 /* BaseNavigationController.swift */; };
 		3A71C05024D2BF360016B285 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C04D24D2BF360016B285 /* BaseTabBarController.swift */; };
-		3A71C05924D2CC590016B285 /* EmailedInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05324D2CC590016B285 /* EmailedInterfaces.swift */; };
-		3A71C05A24D2CC590016B285 /* EmailedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05424D2CC590016B285 /* EmailedPresenter.swift */; };
-		3A71C05B24D2CC590016B285 /* EmailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05524D2CC590016B285 /* EmailedViewController.swift */; };
-		3A71C05C24D2CC590016B285 /* EmailedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05624D2CC590016B285 /* EmailedInteractor.swift */; };
-		3A71C05D24D2CC590016B285 /* EmailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C05724D2CC590016B285 /* EmailedViewController.xib */; };
-		3A71C05E24D2CC590016B285 /* EmailedWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05824D2CC590016B285 /* EmailedWireframe.swift */; };
-		3A71C06724D2CCA00016B285 /* SharedInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C06124D2CCA00016B285 /* SharedInterfaces.swift */; };
-		3A71C06824D2CCA00016B285 /* SharedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C06224D2CCA00016B285 /* SharedPresenter.swift */; };
-		3A71C06924D2CCA10016B285 /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C06324D2CCA00016B285 /* SharedViewController.swift */; };
-		3A71C06A24D2CCA10016B285 /* SharedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C06424D2CCA00016B285 /* SharedInteractor.swift */; };
-		3A71C06B24D2CCA10016B285 /* SharedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C06524D2CCA00016B285 /* SharedViewController.xib */; };
-		3A71C06C24D2CCA10016B285 /* SharedWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C06624D2CCA00016B285 /* SharedWireframe.swift */; };
-		3A71C07424D2CCDF0016B285 /* ViewedInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C06E24D2CCDF0016B285 /* ViewedInterfaces.swift */; };
-		3A71C07524D2CCDF0016B285 /* ViewedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C06F24D2CCDF0016B285 /* ViewedPresenter.swift */; };
-		3A71C07624D2CCDF0016B285 /* ViewedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07024D2CCDF0016B285 /* ViewedViewController.swift */; };
-		3A71C07724D2CCDF0016B285 /* ViewedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07124D2CCDF0016B285 /* ViewedInteractor.swift */; };
-		3A71C07824D2CCDF0016B285 /* ViewedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C07224D2CCDF0016B285 /* ViewedViewController.xib */; };
-		3A71C07924D2CCDF0016B285 /* ViewedWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07324D2CCDF0016B285 /* ViewedWireframe.swift */; };
+		3A71C05924D2CC590016B285 /* NewsInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05324D2CC590016B285 /* NewsInterfaces.swift */; };
+		3A71C05A24D2CC590016B285 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05424D2CC590016B285 /* NewsPresenter.swift */; };
+		3A71C05B24D2CC590016B285 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05524D2CC590016B285 /* NewsViewController.swift */; };
+		3A71C05C24D2CC590016B285 /* NewsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05624D2CC590016B285 /* NewsInteractor.swift */; };
+		3A71C05D24D2CC590016B285 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A71C05724D2CC590016B285 /* NewsViewController.xib */; };
+		3A71C05E24D2CC590016B285 /* NewsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C05824D2CC590016B285 /* NewsWireframe.swift */; };
 		3A71C07C24D2D6180016B285 /* UIViewController+loadFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07A24D2D6180016B285 /* UIViewController+loadFromNib.swift */; };
 		3A71C07D24D2D6180016B285 /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07B24D2D6180016B285 /* TableView+Extension.swift */; };
 		3A71C08524D2E2550016B285 /* DetailInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71C07F24D2E2550016B285 /* DetailInterfaces.swift */; };
@@ -92,24 +80,12 @@
 		3A71C04B24D2BF360016B285 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3A71C04C24D2BF360016B285 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		3A71C04D24D2BF360016B285 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		3A71C05324D2CC590016B285 /* EmailedInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailedInterfaces.swift; sourceTree = "<group>"; };
-		3A71C05424D2CC590016B285 /* EmailedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailedPresenter.swift; sourceTree = "<group>"; };
-		3A71C05524D2CC590016B285 /* EmailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailedViewController.swift; sourceTree = "<group>"; };
-		3A71C05624D2CC590016B285 /* EmailedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailedInteractor.swift; sourceTree = "<group>"; };
-		3A71C05724D2CC590016B285 /* EmailedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailedViewController.xib; sourceTree = "<group>"; };
-		3A71C05824D2CC590016B285 /* EmailedWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailedWireframe.swift; sourceTree = "<group>"; };
-		3A71C06124D2CCA00016B285 /* SharedInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedInterfaces.swift; sourceTree = "<group>"; };
-		3A71C06224D2CCA00016B285 /* SharedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPresenter.swift; sourceTree = "<group>"; };
-		3A71C06324D2CCA00016B285 /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
-		3A71C06424D2CCA00016B285 /* SharedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedInteractor.swift; sourceTree = "<group>"; };
-		3A71C06524D2CCA00016B285 /* SharedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedViewController.xib; sourceTree = "<group>"; };
-		3A71C06624D2CCA00016B285 /* SharedWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWireframe.swift; sourceTree = "<group>"; };
-		3A71C06E24D2CCDF0016B285 /* ViewedInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedInterfaces.swift; sourceTree = "<group>"; };
-		3A71C06F24D2CCDF0016B285 /* ViewedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedPresenter.swift; sourceTree = "<group>"; };
-		3A71C07024D2CCDF0016B285 /* ViewedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedViewController.swift; sourceTree = "<group>"; };
-		3A71C07124D2CCDF0016B285 /* ViewedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedInteractor.swift; sourceTree = "<group>"; };
-		3A71C07224D2CCDF0016B285 /* ViewedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewedViewController.xib; sourceTree = "<group>"; };
-		3A71C07324D2CCDF0016B285 /* ViewedWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedWireframe.swift; sourceTree = "<group>"; };
+		3A71C05324D2CC590016B285 /* NewsInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInterfaces.swift; sourceTree = "<group>"; };
+		3A71C05424D2CC590016B285 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
+		3A71C05524D2CC590016B285 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		3A71C05624D2CC590016B285 /* NewsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInteractor.swift; sourceTree = "<group>"; };
+		3A71C05724D2CC590016B285 /* NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		3A71C05824D2CC590016B285 /* NewsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWireframe.swift; sourceTree = "<group>"; };
 		3A71C07A24D2D6180016B285 /* UIViewController+loadFromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadFromNib.swift"; sourceTree = "<group>"; };
 		3A71C07B24D2D6180016B285 /* TableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		3A71C07F24D2E2550016B285 /* DetailInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaces.swift; sourceTree = "<group>"; };
@@ -238,9 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				3A71C05224D2C8E80016B285 /* Main */,
-				3A71C05F24D2CC620016B285 /* Emailed */,
-				3A71C06024D2CC8D0016B285 /* Shared */,
-				3A71C06D24D2CCC70016B285 /* Viewed */,
+				3A71C05F24D2CC620016B285 /* News */,
 				3A71C09024D2F7490016B285 /* Favorites */,
 				3A71C07E24D2E2380016B285 /* Detail */,
 			);
@@ -283,43 +257,17 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		3A71C05F24D2CC620016B285 /* Emailed */ = {
+		3A71C05F24D2CC620016B285 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				3A71C05324D2CC590016B285 /* EmailedInterfaces.swift */,
-				3A71C05424D2CC590016B285 /* EmailedPresenter.swift */,
-				3A71C05524D2CC590016B285 /* EmailedViewController.swift */,
-				3A71C05624D2CC590016B285 /* EmailedInteractor.swift */,
-				3A71C05724D2CC590016B285 /* EmailedViewController.xib */,
-				3A71C05824D2CC590016B285 /* EmailedWireframe.swift */,
+				3A71C05324D2CC590016B285 /* NewsInterfaces.swift */,
+				3A71C05424D2CC590016B285 /* NewsPresenter.swift */,
+				3A71C05524D2CC590016B285 /* NewsViewController.swift */,
+				3A71C05624D2CC590016B285 /* NewsInteractor.swift */,
+				3A71C05724D2CC590016B285 /* NewsViewController.xib */,
+				3A71C05824D2CC590016B285 /* NewsWireframe.swift */,
 			);
-			path = Emailed;
-			sourceTree = "<group>";
-		};
-		3A71C06024D2CC8D0016B285 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				3A71C06124D2CCA00016B285 /* SharedInterfaces.swift */,
-				3A71C06224D2CCA00016B285 /* SharedPresenter.swift */,
-				3A71C06324D2CCA00016B285 /* SharedViewController.swift */,
-				3A71C06424D2CCA00016B285 /* SharedInteractor.swift */,
-				3A71C06524D2CCA00016B285 /* SharedViewController.xib */,
-				3A71C06624D2CCA00016B285 /* SharedWireframe.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		3A71C06D24D2CCC70016B285 /* Viewed */ = {
-			isa = PBXGroup;
-			children = (
-				3A71C06E24D2CCDF0016B285 /* ViewedInterfaces.swift */,
-				3A71C06F24D2CCDF0016B285 /* ViewedPresenter.swift */,
-				3A71C07024D2CCDF0016B285 /* ViewedViewController.swift */,
-				3A71C07124D2CCDF0016B285 /* ViewedInteractor.swift */,
-				3A71C07224D2CCDF0016B285 /* ViewedViewController.xib */,
-				3A71C07324D2CCDF0016B285 /* ViewedWireframe.swift */,
-			);
-			path = Viewed;
+			path = News;
 			sourceTree = "<group>";
 		};
 		3A71C07E24D2E2380016B285 /* Detail */ = {
@@ -501,14 +449,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A71C06B24D2CCA10016B285 /* SharedViewController.xib in Resources */,
 				3A71C0A824D30A930016B285 /* NewsDetailCell.xib in Resources */,
 				3AE6BA6E24D2A2E7000E3598 /* LaunchScreen.storyboard in Resources */,
 				3A71C08924D2E2550016B285 /* DetailViewController.xib in Resources */,
-				3A71C07824D2CCDF0016B285 /* ViewedViewController.xib in Resources */,
 				3A71C04824D2B74B0016B285 /* MainViewController.xib in Resources */,
 				3A71C0A224D302D30016B285 /* NewsCell.xib in Resources */,
-				3A71C05D24D2CC590016B285 /* EmailedViewController.xib in Resources */,
+				3A71C05D24D2CC590016B285 /* NewsViewController.xib in Resources */,
 				3A71C09B24D2F76A0016B285 /* FavoritesViewController.xib in Resources */,
 				3AE6BA6B24D2A2E7000E3598 /* Assets.xcassets in Resources */,
 			);
@@ -565,16 +511,13 @@
 			files = (
 				3A71C08D24D2E7A30016B285 /* Enums.swift in Sources */,
 				3A71C09724D2F76A0016B285 /* FavoritesInterfaces.swift in Sources */,
-				3A71C07424D2CCDF0016B285 /* ViewedInterfaces.swift in Sources */,
 				3A839CCA24D49E1E000496D3 /* UIViewController+Alert.swift in Sources */,
 				3A71C04924D2B74B0016B285 /* MainWireframe.swift in Sources */,
 				3A71C03924D2B6740016B285 /* FormatterInterface.swift in Sources */,
-				3A71C07924D2CCDF0016B285 /* ViewedWireframe.swift in Sources */,
 				3A71C05024D2BF360016B285 /* BaseTabBarController.swift in Sources */,
 				3A71C04624D2B74B0016B285 /* MainViewController.swift in Sources */,
 				3AE6BA6924D2A2E4000E3598 /* NY_TIMES.xcdatamodeld in Sources */,
 				3A71C08624D2E2550016B285 /* DetailPresenter.swift in Sources */,
-				3A71C06A24D2CCA10016B285 /* SharedInteractor.swift in Sources */,
 				3A71C03824D2B6740016B285 /* BaseWireframe.swift in Sources */,
 				3AE6BA5F24D2A2E4000E3598 /* AppDelegate.swift in Sources */,
 				3A71C07C24D2D6180016B285 /* UIViewController+loadFromNib.swift in Sources */,
@@ -585,37 +528,30 @@
 				3A71C03B24D2B6740016B285 /* PresenterInterface.swift in Sources */,
 				3A71C09A24D2F76A0016B285 /* FavoritesInteractor.swift in Sources */,
 				3A71C03D24D2B6740016B285 /* InteractorInterface.swift in Sources */,
-				3A71C05E24D2CC590016B285 /* EmailedWireframe.swift in Sources */,
+				3A71C05E24D2CC590016B285 /* NewsWireframe.swift in Sources */,
 				3A71C0AB24D341F90016B285 /* Network.swift in Sources */,
 				3A71C08F24D2E7E80016B285 /* News.swift in Sources */,
 				3A71C08524D2E2550016B285 /* DetailInterfaces.swift in Sources */,
-				3A71C06724D2CCA00016B285 /* SharedInterfaces.swift in Sources */,
 				3A71C04524D2B74B0016B285 /* MainPresenter.swift in Sources */,
-				3A71C07724D2CCDF0016B285 /* ViewedInteractor.swift in Sources */,
 				3A71C08A24D2E2550016B285 /* DetailWireframe.swift in Sources */,
 				3A71C08824D2E2550016B285 /* DetailInteractor.swift in Sources */,
 				3AE6BA6124D2A2E4000E3598 /* SceneDelegate.swift in Sources */,
 				3A839CCE24D4A143000496D3 /* UIView+Extension.swift in Sources */,
 				3A71C09924D2F76A0016B285 /* FavoritesViewController.swift in Sources */,
 				3A71C09C24D2F76A0016B285 /* FavoritesWireframe.swift in Sources */,
-				3A71C06924D2CCA10016B285 /* SharedViewController.swift in Sources */,
 				3A839CCC24D4A0A4000496D3 /* CustomActivityView.swift in Sources */,
 				3A71C04424D2B74B0016B285 /* MainInterfaces.swift in Sources */,
 				3A71C0A724D30A930016B285 /* NewsDetailCell.swift in Sources */,
-				3A71C05C24D2CC590016B285 /* EmailedInteractor.swift in Sources */,
-				3A71C07524D2CCDF0016B285 /* ViewedPresenter.swift in Sources */,
-				3A71C05B24D2CC590016B285 /* EmailedViewController.swift in Sources */,
+				3A71C05C24D2CC590016B285 /* NewsInteractor.swift in Sources */,
+				3A71C05B24D2CC590016B285 /* NewsViewController.swift in Sources */,
 				3A71C04E24D2BF360016B285 /* BaseViewController.swift in Sources */,
-				3A71C06824D2CCA00016B285 /* SharedPresenter.swift in Sources */,
 				3A71C08724D2E2550016B285 /* DetailViewController.swift in Sources */,
 				3A71C0A124D302D30016B285 /* NewsCell.swift in Sources */,
 				3A71C04F24D2BF360016B285 /* BaseNavigationController.swift in Sources */,
-				3A71C07624D2CCDF0016B285 /* ViewedViewController.swift in Sources */,
-				3A71C05924D2CC590016B285 /* EmailedInterfaces.swift in Sources */,
+				3A71C05924D2CC590016B285 /* NewsInterfaces.swift in Sources */,
 				3A71C02E24D2B5970016B285 /* Constants.swift in Sources */,
 				3A71C07D24D2D6180016B285 /* TableView+Extension.swift in Sources */,
-				3A71C06C24D2CCA10016B285 /* SharedWireframe.swift in Sources */,
-				3A71C05A24D2CC590016B285 /* EmailedPresenter.swift in Sources */,
+				3A71C05A24D2CC590016B285 /* NewsPresenter.swift in Sources */,
 				3A71C03A24D2B6740016B285 /* UIStoryboardExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

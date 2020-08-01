@@ -1,5 +1,5 @@
 //
-//  EmailedPresenter.swift
+//  NewsPresenter.swift
 //  NY_TIMES
 //
 //  Created by Saul Goodman on 30.07.2020.
@@ -10,44 +10,48 @@
 
 import Foundation
 
-final class EmailedPresenter {
+final class NewsPresenter {
 
     // MARK: - Private properties -
 
-    private unowned let view: EmailedViewInterface
-    private let interactor: EmailedInteractorInterface
-    private let wireframe: EmailedWireframeInterface
+    private unowned let view: NewsViewInterface
+    private let interactor: NewsInteractorInterface
+    private let wireframe: NewsWireframeInterface
     
     var news = [News]() {
         didSet {
             view.reloadData()
         }
     }
+    
+    private var type: NewsCategory!
 
     // MARK: - Lifecycle -
 
-    init(view: EmailedViewInterface, interactor: EmailedInteractorInterface, wireframe: EmailedWireframeInterface) {
+    init(view: NewsViewInterface, interactor: NewsInteractorInterface, wireframe: NewsWireframeInterface, type: NewsCategory) {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
+        self.type = type
     }
 }
 
 // MARK: - EmailedPresenterInterface
-extension EmailedPresenter: EmailedPresenterInterface {
+extension NewsPresenter: NewsPresenterInterface {
     func item(at indexPath: IndexPath) -> NewsViewItemInterface {
         return news[indexPath.row]
     }
     
     func viewDidLoad() {
         view.setLoadingVisible(true)
+        view.setNavigationTitle(type.getCategoryString())
         
-        interactor.getNewsBy(category: .emailed, period: 30) { [weak self] (news, error) in
+        interactor.getNewsBy(category: self.type, period: 30) { [weak self] (news, error) in
             
             self?.view.setLoadingVisible(false)
             
             if let news = news {
-                self?.news = news
+                self?.news = news.sorted(by: { $0.updated! > $1.updated! })
             }
             else if let err = error {
                 self?.view.showAlertWith(title: AlertString.kError, message: err.localizedDescription)

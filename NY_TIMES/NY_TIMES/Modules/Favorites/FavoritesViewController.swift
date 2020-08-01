@@ -21,13 +21,7 @@ final class FavoritesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigation()
         presenter.viewDidLoad()
-    }
-    
-    //MARK: - private
-    private func setupNavigation() {
-        self.navigationItem.title = VCTitle.kFavorites
     }
 
 }
@@ -66,6 +60,10 @@ extension FavoritesViewController: UITableViewDelegate {
 
 // MARK: - FavoritesViewInterface
 extension FavoritesViewController: FavoritesViewInterface {
+    func setNavigationTitle(_ title: String) {
+        self.navigationItem.title = title
+    }
+    
     func reloadData() {
         
     }
