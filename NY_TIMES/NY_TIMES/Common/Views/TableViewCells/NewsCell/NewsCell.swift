@@ -9,6 +9,10 @@
 import UIKit
 import AlamofireImage
 
+protocol NewsCellDelegate: class {
+    func favoritesButtonDidClick(_ sender: UIButton)
+}
+
 class NewsCell: UITableViewCell {
     
     static let cellID = "NewsCell"
@@ -18,6 +22,8 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var newsTextView: UITextView!
+    
+    private weak var delegate: NewsCellDelegate?
     
     //MARK: -
     override func awakeFromNib() {
@@ -39,7 +45,7 @@ class NewsCell: UITableViewCell {
     }
 
     //MARK: - Configuration
-    func configure(with item: NewsViewItemInterface) {
+    func configure(with item: NewsViewItemInterface, view: NewsCellDelegate? = nil) {
         if let url = item.thumbnailURL {
             cellImageView.af_setImage(withURL: url, placeholderImage: UIImage(named: "noImage"), completion: nil)
         }
@@ -51,11 +57,13 @@ class NewsCell: UITableViewCell {
         authorLabel.text = item.author
         newsTextView.text = item.news ?? ""
         titleLabel.text = item.newsTitle
+        
+        self.delegate = view
     }
     
     //MARK: - Actions
     @IBAction func addToFavoritesDidClick(_ sender: UIButton) {
-        print("FAV")
+        delegate?.favoritesButtonDidClick(sender)
     }
     
     //MARK: - private

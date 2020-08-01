@@ -47,11 +47,18 @@ extension SharedViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: presenter.item(at: indexPath))
+        cell.configure(with: presenter.item(at: indexPath), view: self)
         
         return cell
     }
     
+}
+
+//MARK: - NewsCellDelegate
+extension SharedViewController: NewsCellDelegate {
+    func favoritesButtonDidClick(_ sender: UIButton) {
+        print("SharedViewController")
+    }
 }
 
 //MARK: - UITableViewDelegate

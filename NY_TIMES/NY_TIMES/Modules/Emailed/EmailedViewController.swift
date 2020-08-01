@@ -47,11 +47,18 @@ extension EmailedViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: presenter.item(at: indexPath))
+        cell.configure(with: presenter.item(at: indexPath), view: self)
         
         return cell
     }
     
+}
+
+//MARK: - NewsCellDelegate
+extension EmailedViewController: NewsCellDelegate {
+    func favoritesButtonDidClick(_ sender: UIButton) {
+        print("EmailedViewController")
+    }
 }
 
 //MARK: - UITableViewDelegate
