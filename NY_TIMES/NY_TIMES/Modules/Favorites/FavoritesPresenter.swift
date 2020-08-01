@@ -32,6 +32,9 @@ final class FavoritesPresenter {
 // MARK: - Extensions -
 
 extension FavoritesPresenter: FavoritesPresenterInterface {
+    func item(at indexPath: IndexPath) -> NewsViewItemInterface {
+        return news[indexPath.row]
+    }
     
     func viewDidLoad() {
         

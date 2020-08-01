@@ -18,7 +18,11 @@ final class EmailedPresenter {
     private let interactor: EmailedInteractorInterface
     private let wireframe: EmailedWireframeInterface
     
-    var news = [News]()
+    var news = [News]() {
+        didSet {
+            view.reloadData()
+        }
+    }
 
     // MARK: - Lifecycle -
 
@@ -31,9 +35,24 @@ final class EmailedPresenter {
 
 // MARK: - EmailedPresenterInterface
 extension EmailedPresenter: EmailedPresenterInterface {
+    func item(at indexPath: IndexPath) -> NewsViewItemInterface {
+        return news[indexPath.row]
+    }
     
     func viewDidLoad() {
+        view.setLoadingVisible(true)
         
+        interactor.getNewsBy(category: .emailed, period: 30) { [weak self] (news, error) in
+            
+            self?.view.setLoadingVisible(false)
+            
+            if let news = news {
+                self?.news = news
+            }
+            else if let err = error {
+                self?.view.showAlertWith(title: AlertString.kError, message: err.localizedDescription)
+            }
+        }
     }
     
     func numberOfItems(in section: Int) -> Int {

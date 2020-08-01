@@ -12,7 +12,10 @@ import UIKit
 
 final class SharedViewController: BaseViewController {
 
-    // MARK: - Public properties -
+    // MARK: - properties
+    lazy var activityView: CustomActivityIndicatorView = {
+        return CustomActivityIndicatorView(parentView: self.view)
+    }()
 
     var presenter: SharedPresenterInterface!
 
@@ -44,6 +47,8 @@ extension SharedViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.configure(with: presenter.item(at: indexPath))
+        
         return cell
     }
     
@@ -64,4 +69,15 @@ extension SharedViewController: UITableViewDelegate {
 
 //MARK: - SharedViewInterface
 extension SharedViewController: SharedViewInterface {
+    func reloadData() {
+        tableView?.reloadDataOnMainQueue()
+    }
+    
+    func setLoadingVisible(_ visible: Bool) {
+        visible ? activityView.showActivityIndicator() : activityView.hideActivityIndicator()
+    }
+    
+    func showAlertWith(title: String?, message: String) {
+        showAlertWithOkButton(title: title, message: message)
+    }
 }

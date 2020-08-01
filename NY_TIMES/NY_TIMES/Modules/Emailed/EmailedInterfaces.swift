@@ -13,11 +13,11 @@ import UIKit
 protocol EmailedWireframeInterface: WireframeInterface {
 }
 
-protocol EmailedViewInterface: ViewInterface {
+protocol EmailedViewInterface: NewsViewInterfase {
 }
 
 protocol EmailedPresenterInterface: NewsPresenterInterface {
 }
 
-protocol EmailedInteractorInterface: InteractorInterface {
+protocol EmailedInteractorInterface: NewsInteractorInterface {
 }

@@ -11,3 +11,8 @@ protocol InteractorInterface: class {
 
 extension InteractorInterface {
 }
+
+protocol NewsInteractorInterface {
+    var network: Network { get }
+    func getNewsBy(category: NewsCategory, period: Int, completion:@escaping NewsResponseBlock)
+}

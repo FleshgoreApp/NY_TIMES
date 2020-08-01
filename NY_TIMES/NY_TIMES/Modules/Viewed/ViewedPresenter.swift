@@ -18,7 +18,11 @@ final class ViewedPresenter {
     private let interactor: ViewedInteractorInterface
     private let wireframe: ViewedWireframeInterface
 
-    var news = [News]()
+    var news = [News]() {
+        didSet {
+            view.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle -
 
@@ -32,9 +36,24 @@ final class ViewedPresenter {
 // MARK: - Extensions -
 
 extension ViewedPresenter: ViewedPresenterInterface {
+    func item(at indexPath: IndexPath) -> NewsViewItemInterface {
+        return news[indexPath.row]
+    }
     
     func viewDidLoad() {
+        view.setLoadingVisible(true)
         
+        interactor.getNewsBy(category: .viewed, period: 30) { [weak self] (news, error) in
+            
+            self?.view.setLoadingVisible(false)
+            
+            if let news = news {
+                self?.news = news
+            }
+            else if let err = error {
+                self?.view.showAlertWith(title: AlertString.kError, message: err.localizedDescription)
+            }
+        }
     }
     
     func numberOfItems(in section: Int) -> Int {

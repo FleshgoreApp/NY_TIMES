@@ -11,9 +11,15 @@
 import Foundation
 
 final class SharedInteractor {
+    var network = Network(baseUrl: API.kUrlBaseString)
 }
 
 // MARK: - Extensions -
 
 extension SharedInteractor: SharedInteractorInterface {
+    func getNewsBy(category: NewsCategory, period: Int, completion: @escaping NewsResponseBlock) {
+        network.getNewsBy(category: category, period: period) { (news, error) in
+            completion(news, error)
+        }
+    }
 }

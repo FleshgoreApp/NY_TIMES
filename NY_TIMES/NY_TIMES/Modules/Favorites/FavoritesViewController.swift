@@ -44,6 +44,8 @@ extension FavoritesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.configure(with: presenter.item(at: indexPath))
+        
         return cell
     }
     
@@ -64,5 +66,15 @@ extension FavoritesViewController: UITableViewDelegate {
 
 // MARK: - FavoritesViewInterface
 extension FavoritesViewController: FavoritesViewInterface {
+    func reloadData() {
+        
+    }
     
+    func setLoadingVisible(_ visible: Bool) {
+        
+    }
+    
+    func showAlertWith(title: String?, message: String) {
+        
+    }
 }

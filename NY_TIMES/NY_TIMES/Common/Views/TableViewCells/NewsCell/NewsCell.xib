@@ -112,8 +112,8 @@
             <connections>
                 <outlet property="addToFavoriteBtn" destination="rjC-gz-2it" id="7px-SJ-PYc"/>
                 <outlet property="authorLabel" destination="8wK-Mv-7GE" id="OuY-KW-xOD"/>
+                <outlet property="cellImageView" destination="e5A-tm-bjt" id="kfS-u0-v94"/>
                 <outlet property="newsTextView" destination="5uF-gG-FJK" id="QXj-T1-ZEi"/>
-                <outlet property="newsTopImageView" destination="e5A-tm-bjt" id="McN-gx-xfQ"/>
                 <outlet property="titleLabel" destination="63x-aA-dSL" id="pG5-Wt-fdT"/>
                 <outlet property="updatedLabel" destination="ixv-l6-G3u" id="rWt-qg-mwe"/>
             </connections>

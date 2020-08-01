@@ -19,3 +19,8 @@ struct API {
     static let kUrlBaseString = "https://api.nytimes.com/svc/mostpopular/v2/"
     static let kApiKey = ".json?api-key=3ycKQJSP4SycGnZ6l3hQfupfSG8yb741"
 }
+
+struct AlertString {
+    static let kOkTitle = "Ok"
+    static let kError = "Error"
+}

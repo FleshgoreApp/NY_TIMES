@@ -34,7 +34,7 @@ class BaseNetwork: NetworkProtocol {
 
 final class Network: BaseNetwork {
 
-    func getNews(category: NewsCategory, period: Int, completion:@escaping NewsResponseBlock) {
+    func getNewsBy(category: NewsCategory, period: Int, completion:@escaping NewsResponseBlock) {
         getData(endPoint: category.getUrlforPeriodOf(days: period)) { response in
             guard let data = response?.data else {
                 completion(nil, response?.error)//TODO

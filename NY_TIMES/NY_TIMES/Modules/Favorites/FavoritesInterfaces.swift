@@ -13,7 +13,7 @@ import UIKit
 protocol FavoritesWireframeInterface: WireframeInterface {
 }
 
-protocol FavoritesViewInterface: ViewInterface {
+protocol FavoritesViewInterface: NewsViewInterfase {
 }
 
 protocol FavoritesPresenterInterface: NewsPresenterInterface {

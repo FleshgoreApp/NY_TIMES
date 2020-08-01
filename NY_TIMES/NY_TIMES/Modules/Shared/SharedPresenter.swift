@@ -18,7 +18,11 @@ final class SharedPresenter {
     private let interactor: SharedInteractorInterface
     private let wireframe: SharedWireframeInterface
 
-    var news = [News]()
+    var news = [News]() {
+        didSet {
+            view.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle -
 
@@ -32,9 +36,24 @@ final class SharedPresenter {
 // MARK: - Extensions -
 
 extension SharedPresenter: SharedPresenterInterface {
+    func item(at indexPath: IndexPath) -> NewsViewItemInterface {
+        return news[indexPath.row]
+    }
     
     func viewDidLoad() {
+        view.setLoadingVisible(true)
         
+        interactor.getNewsBy(category: .shared, period: 30) { [weak self] (news, error) in
+            
+            self?.view.setLoadingVisible(false)
+            
+            if let news = news {
+                self?.news = news
+            }
+            else if let err = error {
+                self?.view.showAlertWith(title: AlertString.kError, message: err.localizedDescription)
+            }
+        }
     }
     
     func numberOfItems(in section: Int) -> Int {

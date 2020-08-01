@@ -11,3 +11,9 @@ protocol ViewInterface: class {
 
 extension ViewInterface {
 }
+
+protocol NewsViewInterfase: class {
+    func reloadData()
+    func setLoadingVisible(_ visible: Bool)
+    func showAlertWith(title: String?, message: String)
+}

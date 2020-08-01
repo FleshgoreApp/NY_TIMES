@@ -11,8 +11,11 @@
 import UIKit
 
 final class EmailedViewController: BaseViewController {
-
-    // MARK: - Public properties -
+    
+    // MARK: - properties
+    lazy var activityView: CustomActivityIndicatorView = {
+        return CustomActivityIndicatorView(parentView: self.view)
+    }()
 
     var presenter: EmailedPresenterInterface!
 
@@ -23,10 +26,6 @@ final class EmailedViewController: BaseViewController {
         
         presenter.viewDidLoad()
         setupNavigation()
-        Network(baseUrl: API.kUrlBaseString).getNews(category: .viewed, period: 1) { news, error in
-            //print(news)
-            //print(error)
-        }
     }
     
     //MARK: - private
@@ -48,6 +47,8 @@ extension EmailedViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.configure(with: presenter.item(at: indexPath))
+        
         return cell
     }
     
@@ -68,7 +69,17 @@ extension EmailedViewController: UITableViewDelegate {
 
 //MARK: - EmailedViewInterface
 extension EmailedViewController: EmailedViewInterface {
+    func reloadData() {
+        tableView?.reloadDataOnMainQueue()
+    }
     
+    func setLoadingVisible(_ visible: Bool) {
+        visible ? activityView.showActivityIndicator() : activityView.hideActivityIndicator()
+    }
+    
+    func showAlertWith(title: String?, message: String) {
+        showAlertWithOkButton(title: title, message: message)
+    }
 }
 
 

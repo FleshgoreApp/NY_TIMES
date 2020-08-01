@@ -13,11 +13,11 @@ import UIKit
 protocol SharedWireframeInterface: WireframeInterface {
 }
 
-protocol SharedViewInterface: ViewInterface {
+protocol SharedViewInterface: NewsViewInterfase {
 }
 
 protocol SharedPresenterInterface: NewsPresenterInterface {
 }
 
-protocol SharedInteractorInterface: InteractorInterface {
+protocol SharedInteractorInterface: NewsInteractorInterface {
 }

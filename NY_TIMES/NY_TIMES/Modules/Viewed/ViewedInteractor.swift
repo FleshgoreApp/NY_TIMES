@@ -11,9 +11,15 @@
 import Foundation
 
 final class ViewedInteractor {
+    var network = Network(baseUrl: API.kUrlBaseString)
 }
 
 // MARK: - Extensions -
 
 extension ViewedInteractor: ViewedInteractorInterface {
+    func getNewsBy(category: NewsCategory, period: Int, completion: @escaping NewsResponseBlock) {
+        network.getNewsBy(category: category, period: period) { (news, error) in
+            completion(news, error)
+        }
+    }
 }

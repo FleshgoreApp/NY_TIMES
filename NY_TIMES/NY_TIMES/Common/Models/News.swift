@@ -65,7 +65,7 @@ struct Media {
     let subtype:   String?
     let caption:   String?
     let copyright: String?
-    let approved_for_syndication: Int?
+    let approved_for_syndication: Bool?
     let mediaMetadata: [MediaMetadata]?
 }
 
@@ -94,4 +94,45 @@ extension MediaMetadata: JSONParseable {
                                  height: json["height"]^,
                                  width: json["width"]^)
     }
+}
+
+protocol NewsViewItemInterface {
+    var imageURL: URL? { get }
+    var thumbnailURL: URL? { get }
+    var newsTitle: String? { get }
+    var updatedDate: String? { get }
+    var author: String? { get }
+    var news: String? { get }
+    
+}
+
+extension News: NewsViewItemInterface {
+    var imageURL: URL? {
+        guard let urlString = media?.first?.mediaMetadata?.last?.url else { return nil }
+        return URL(string: urlString)
+    }
+    
+    var thumbnailURL: URL? {
+        guard let urlString = media?.first?.mediaMetadata?.first?.url else { return nil }
+        return URL(string: urlString)
+    }
+    
+    var newsTitle: String? {
+        guard let title = title else {
+            return nil
+        }
+        return title
+    }
+    
+    var updatedDate: String? {
+        return updated
+    }
+
+    var author: String? {
+        return byline
+    }
+    
+    var news: String? {
+        return abstract
+    }    
 }

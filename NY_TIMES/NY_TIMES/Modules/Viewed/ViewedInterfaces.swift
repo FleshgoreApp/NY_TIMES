@@ -13,11 +13,11 @@ import UIKit
 protocol ViewedWireframeInterface: WireframeInterface {
 }
 
-protocol ViewedViewInterface: ViewInterface {
+protocol ViewedViewInterface: NewsViewInterfase {
 }
 
 protocol ViewedPresenterInterface: NewsPresenterInterface {
 }
 
-protocol ViewedInteractorInterface: InteractorInterface {
+protocol ViewedInteractorInterface: NewsInteractorInterface {
 }
