@@ -6,7 +6,7 @@
 //  Copyright © 2020 Shvets. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct VCTitle {
     static let kEmailed = "Emailed"
@@ -23,4 +23,14 @@ struct API {
 struct AlertString {
     static let kOkTitle = "Ok"
     static let kError = "Error"
+}
+
+struct FontSize {
+    static let kCellTitleFS:CGFloat = 17
+    static let kCellNewsFS:CGFloat  = 15
+}
+
+struct Font {
+    static let kCellTitle = UIFont.systemFont(ofSize: FontSize.kCellTitleFS)
+    static let kCellNews  = UIFont.systemFont(ofSize: FontSize.kCellNewsFS)
 }

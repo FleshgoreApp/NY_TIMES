@@ -20,7 +20,7 @@ protocol DetailViewInterface: ViewInterface {
 protocol DetailPresenterInterface: PresenterInterface {
     func viewDidLoad()
     func numberOfItems(in section: Int) -> Int
-    var news: News? { get }
+    var news: NewsViewItemInterface? { get }
 }
 
 protocol DetailInteractorInterface: InteractorInterface {

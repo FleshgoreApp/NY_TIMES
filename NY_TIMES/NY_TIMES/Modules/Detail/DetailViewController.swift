@@ -40,9 +40,12 @@ extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsDetailCell.cellID, for: indexPath) as? NewsDetailCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsDetailCell.cellID, for: indexPath) as? NewsDetailCell,
+            let news = presenter.news else {
             return UITableViewCell()
         }
+        
+        cell.configure(with: news)
         
         return cell
     }

@@ -18,13 +18,14 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var newsTextView: UITextView!
-    @IBOutlet weak var addToFavoriteBtn: UIButton!
     
+    //MARK: -
     override func awakeFromNib() {
         super.awakeFromNib()
         cellImageView.layer.masksToBounds = true
         cellImageView.layer.borderColor = UIColor.lightGray.cgColor
         cellImageView.layer.borderWidth = 1.0 / UIScreen.main.scale
+        setupFontSize()
     }
 
     override func prepareForReuse() {
@@ -37,6 +38,7 @@ class NewsCell: UITableViewCell {
         cellImageView.layer.cornerRadius = cellImageView.frame.width / 2.0
     }
 
+    //MARK: - Configuration
     func configure(with item: NewsViewItemInterface) {
         if let url = item.thumbnailURL {
             cellImageView.af_setImage(withURL: url, placeholderImage: UIImage(named: "noImage"), completion: nil)
@@ -49,6 +51,17 @@ class NewsCell: UITableViewCell {
         authorLabel.text = item.author
         newsTextView.text = item.news ?? ""
         titleLabel.text = item.newsTitle
+    }
+    
+    //MARK: - Actions
+    @IBAction func addToFavoritesDidClick(_ sender: UIButton) {
+        print("FAV")
+    }
+    
+    //MARK: - private
+    private func setupFontSize() {
+        titleLabel.font = Font.kCellTitle
+        newsTextView.font = Font.kCellNews
     }
     
 }

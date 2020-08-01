@@ -18,7 +18,7 @@ final class DetailPresenter {
     private let interactor: DetailInteractorInterface
     private let wireframe: DetailWireframeInterface
 
-    var news: News?
+    var news: NewsViewItemInterface?
     
     // MARK: - Lifecycle -
 
@@ -34,7 +34,7 @@ final class DetailPresenter {
 
 extension DetailPresenter: DetailPresenterInterface {
     func viewDidLoad() {
-        view.setNavigationTitle(text: news?.title ?? "")
+        view.setNavigationTitle(text: news?.newsTitle ?? "")
     }
     
     func numberOfItems(in section: Int) -> Int {
