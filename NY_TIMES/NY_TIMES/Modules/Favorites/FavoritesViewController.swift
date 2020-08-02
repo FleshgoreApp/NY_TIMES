@@ -20,6 +20,8 @@ final class FavoritesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTableView()
         presenter.viewDidLoad()
     }
     
@@ -27,7 +29,11 @@ final class FavoritesViewController: BaseViewController {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
     }
-
+    
+    //MARK: - private
+    private func setupTableView() {
+        tableView?.basicSettingsWith(self)
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -91,10 +97,6 @@ extension FavoritesViewController: FavoritesViewInterface {
     
     func reloadData() {
         tableView?.reloadDataOnMainQueue()
-    }
-    
-    func setLoadingVisible(_ visible: Bool) {
-        
     }
     
     func showAlertWith(title: String?, message: String) {

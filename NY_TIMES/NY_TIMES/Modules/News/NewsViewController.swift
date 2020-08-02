@@ -24,9 +24,17 @@ final class NewsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView()
         presenter.viewDidLoad()
     }
-
+    
+    private func setupTableView() {
+        tableView?.basicSettingsWith(self, actionRC: #selector(refreshData))
+    }
+    
+    @objc private func refreshData() {
+        presenter.refreshData()
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -70,6 +78,16 @@ extension NewsViewController: UITableViewDelegate {
 
 //MARK: - EmailedViewInterface
 extension NewsViewController: NewsViewInterface {
+    func setNoConnectionVisible(_ visible: Bool) {
+        self.setNoConnection(visible)
+    }
+    
+    func endRefreshing() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView?.refreshControl?.endRefreshing()
+        }
+    }
+    
     func setNavigationTitle(_ title: String) {
         self.navigationItem.title = title
     }

@@ -20,6 +20,7 @@ final class NewsPresenter {
     
     var news = [News]() {
         didSet {
+            view.endRefreshing()
             view.reloadData()
         }
     }
@@ -38,6 +39,10 @@ final class NewsPresenter {
 
 // MARK: - EmailedPresenterInterface
 extension NewsPresenter: NewsPresenterInterface {
+    func refreshData() {
+        getNews()
+    }
+    
     func favoritesButtonDidClick(_ index: Int) {
         interactor.addNewsToFavorites(news: [ news[index] ])
     }
@@ -49,18 +54,7 @@ extension NewsPresenter: NewsPresenterInterface {
     func viewDidLoad() {
         view.setLoadingVisible(true)
         view.setNavigationTitle(type.getCategoryString())
-        
-        interactor.getNewsBy(category: self.type, period: 30) { [weak self] (news, error) in
-            
-            self?.view.setLoadingVisible(false)
-            
-            if let news = news {
-                self?.news = news.sorted(by: { $0.updated! > $1.updated! })
-            }
-            else if let err = error {
-                self?.view.showAlertWith(title: AlertString.kError, message: err.localizedDescription)
-            }
-        }
+        getNews()
     }
     
     func numberOfItems(in section: Int) -> Int {
@@ -69,5 +63,28 @@ extension NewsPresenter: NewsPresenterInterface {
     
     func didSelectRowAtIndexPath(_ indexPath: IndexPath) {
         wireframe.navigate(to: .details(news[indexPath.row]))
+    }
+    
+    private func getNews() {
+        interactor.getNewsBy(category: self.type, period: 30) { [weak self] (news, error) in
+            
+            self?.view.setLoadingVisible(false)
+            
+            if let news = news {
+                self?.news = news.sorted(by: { $0.updated! > $1.updated! })
+                self?.view.setNoConnectionVisible(false)
+            }
+            else if let err = error {
+                self?.view.endRefreshing()
+                
+                switch err._code {
+                case -1009:
+                    self?.news = [News]()
+                    self?.view.setNoConnectionVisible(true)
+                default:
+                    self?.view.setNoConnectionVisible(false)
+                }
+            }
+        }
     }
 }

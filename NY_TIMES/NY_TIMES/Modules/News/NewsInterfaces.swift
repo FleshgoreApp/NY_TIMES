@@ -15,24 +15,27 @@ protocol NewsWireframeInterface: WireframeInterface {
 }
 
 protocol NewsViewInterface: ViewInterface {
+    func endRefreshing()
     func reloadData()
     func setLoadingVisible(_ visible: Bool)
+    func setNoConnectionVisible(_ visible: Bool)
     func setNavigationTitle(_ title: String)
     func showAlertWith(title: String?, message: String)
 }
 
 protocol NewsPresenterInterface: PresenterInterface {
+    func refreshData()
     func item(at indexPath: IndexPath) -> NewsViewItemInterface
     func didSelectRowAtIndexPath(_ indexPath: IndexPath)
-    var news: [News] { get }
+    var  news: [News] { get }
     func viewDidLoad()
     func numberOfItems(in section: Int) -> Int
     func favoritesButtonDidClick(_ index: Int)
 }
 
 protocol NewsInteractorInterface: InteractorInterface {
-    var network: Network { get }
-    var databaseManager: DatabaseManager { get }
+    var  network: Network { get }
+    var  databaseManager: DatabaseManager { get }
     func getNewsBy(category: NewsCategory, period: Int, completion:@escaping NewsResponseBlock)
     func addNewsToFavorites(news: [News])
 }

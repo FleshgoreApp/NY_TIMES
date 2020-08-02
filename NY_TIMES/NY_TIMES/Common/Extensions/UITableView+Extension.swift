@@ -1,5 +1,5 @@
 //
-//  TableView+Extension.swift
+//  UITableView+Extension.swift
 //  Quotes
 //
 //  Created by Saul Goodman on 05.03.2020.
@@ -10,7 +10,12 @@ import UIKit
 
 extension UITableView {
     
-    func basicSettingsWith(_ view: UIViewController) {
+    func basicSettingsWith(_ view: UIViewController, actionRC: Selector? = nil) {
+        if let action = actionRC {
+            let rc = UIRefreshControl()
+            self.refreshControl = rc
+            rc.addTarget(view, action: action, for: .valueChanged)
+        }
         self.tableFooterView = UIView()
         self.keyboardDismissMode = .onDrag
         self.delegate = view as? UITableViewDelegate

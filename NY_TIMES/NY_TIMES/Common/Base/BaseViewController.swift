@@ -32,7 +32,6 @@ class BaseViewController: UIViewController {
     }
     
     private func setupTableView() {
-        tableView?.basicSettingsWith(self)
         tableView?.register(UINib(nibName: NewsCell.cellID, bundle: nil), forCellReuseIdentifier: NewsCell.cellID)
     }
 }
