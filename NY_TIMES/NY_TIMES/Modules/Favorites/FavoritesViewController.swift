@@ -20,8 +20,12 @@ final class FavoritesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
     }
 
 }
@@ -38,7 +42,7 @@ extension FavoritesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: presenter.item(at: indexPath))
+        cell.configure(with: presenter.item(at: indexPath), indexPath: indexPath, hideFavoritesButton: true)
         
         return cell
     }
@@ -47,6 +51,21 @@ extension FavoritesViewController: UITableViewDataSource {
 
 //MARK: - UITableViewDelegate
 extension FavoritesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, complete in
+            
+            self?.presenter.trailingSwipeActionsForRowAt(indexPath: indexPath)
+            
+            complete(true)
+        }
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = true
+        
+        return configuration
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -60,12 +79,18 @@ extension FavoritesViewController: UITableViewDelegate {
 
 // MARK: - FavoritesViewInterface
 extension FavoritesViewController: FavoritesViewInterface {
+    func deleteRowAtIndexPath(_ indexPath: IndexPath) {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView?.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     func setNavigationTitle(_ title: String) {
         self.navigationItem.title = title
     }
     
     func reloadData() {
-        
+        tableView?.reloadDataOnMainQueue()
     }
     
     func setLoadingVisible(_ visible: Bool) {

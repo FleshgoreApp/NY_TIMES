@@ -31,6 +31,9 @@ struct News {
     let geo_facet:      [String]?
     let media:          [Media]?
     let eta_id:         Int?
+    var createdToDB:         Double? = nil
+    var imageDataFromDB:     Data? = nil
+    var thumbnailDataFromDB: Data? = nil
 }
 
 extension News: JSONParseable {
@@ -103,7 +106,8 @@ protocol NewsViewItemInterface {
     var updatedDate: String? { get }
     var author: String? { get }
     var news: String? { get }
-    
+    var imageFromDB: UIImage { get }
+    var thumbnailFromDB: UIImage { get }
 }
 
 extension News: NewsViewItemInterface {
@@ -134,5 +138,19 @@ extension News: NewsViewItemInterface {
     
     var news: String? {
         return abstract
-    }    
+    }
+    
+    var imageFromDB: UIImage {
+        guard let data = imageDataFromDB else {
+            return UIImage(named: "noImage") ?? UIImage()
+        }
+        return UIImage(data: data) ?? UIImage()
+    }
+    
+    var thumbnailFromDB: UIImage {
+        guard let data = thumbnailDataFromDB else {
+            return UIImage(named: "noImage") ?? UIImage()
+        }
+        return UIImage(data: data) ?? UIImage()
+    }
 }

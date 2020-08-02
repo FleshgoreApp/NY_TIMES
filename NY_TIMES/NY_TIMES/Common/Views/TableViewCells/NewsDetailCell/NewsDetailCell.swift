@@ -12,9 +12,9 @@ class NewsDetailCell: UITableViewCell {
 
     static let cellID = "NewsDetailCell"
     
-    @IBOutlet weak var cellImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var newsTextView: UITextView!
+    @IBOutlet private weak var cellImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var newsTextView: UITextView!
 
     override func awakeFromNib() {
         setupFontSize()
@@ -30,7 +30,7 @@ class NewsDetailCell: UITableViewCell {
             cellImageView.af_setImage(withURL: url, placeholderImage: UIImage(named: "noImage"), completion: nil)
         }
         else {
-            cellImageView.image = UIImage(named: "noImage")
+            cellImageView.image = item.imageFromDB
         }
         
         newsTextView.text = item.news ?? ""

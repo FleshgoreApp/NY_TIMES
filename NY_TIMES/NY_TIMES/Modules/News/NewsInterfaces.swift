@@ -27,9 +27,12 @@ protocol NewsPresenterInterface: PresenterInterface {
     var news: [News] { get }
     func viewDidLoad()
     func numberOfItems(in section: Int) -> Int
+    func favoritesButtonDidClick(_ index: Int)
 }
 
 protocol NewsInteractorInterface: InteractorInterface {
     var network: Network { get }
+    var databaseManager: DatabaseManager { get }
     func getNewsBy(category: NewsCategory, period: Int, completion:@escaping NewsResponseBlock)
+    func addNewsToFavorites(news: [News])
 }

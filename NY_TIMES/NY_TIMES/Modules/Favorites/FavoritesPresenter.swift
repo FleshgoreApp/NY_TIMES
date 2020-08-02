@@ -32,12 +32,28 @@ final class FavoritesPresenter {
 // MARK: - Extensions -
 
 extension FavoritesPresenter: FavoritesPresenterInterface {
+    func favoritesButtonDidClick(_ index: Int) {}
+    
+    func trailingSwipeActionsForRowAt(indexPath: IndexPath) {
+        self.interactor.deleteNews(news: [news[indexPath.row]]) { [weak self] success in
+            if success {
+                self?.news.remove(at: indexPath.row)
+                self?.view.deleteRowAtIndexPath(indexPath)
+            }
+        }
+    }
+    
+    func viewWillAppear() {
+        getNews()
+    }
+    
     func item(at indexPath: IndexPath) -> NewsViewItemInterface {
         return news[indexPath.row]
     }
     
     func viewDidLoad() {
         view.setNavigationTitle(VCTitle.kFavorites)
+        getNews()
     }
     
     func numberOfItems(in section: Int) -> Int {
@@ -46,5 +62,15 @@ extension FavoritesPresenter: FavoritesPresenterInterface {
     
     func didSelectRowAtIndexPath(_ indexPath: IndexPath) {
         wireframe.navigate(to: .details(news[indexPath.row]))
+    }
+    
+    //MARK -
+    private func getNews() {
+        interactor.getNews { [weak self] news in
+            if let news = news {
+                self?.news = news
+                self?.view.reloadData()
+            }
+        }
     }
 }

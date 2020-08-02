@@ -14,10 +14,16 @@ protocol FavoritesWireframeInterface: WireframeInterface {
 }
 
 protocol FavoritesViewInterface: NewsViewInterface {
+    func deleteRowAtIndexPath(_ indexPath: IndexPath)
 }
 
 protocol FavoritesPresenterInterface: NewsPresenterInterface {
+    func viewWillAppear()
+    func trailingSwipeActionsForRowAt(indexPath: IndexPath)
 }
 
 protocol FavoritesInteractorInterface: InteractorInterface {
+    var databaseManager: DatabaseManager { get }
+    func getNews(completion:@escaping (_ news: [News]?) -> Void)
+    func deleteNews(news: [News], completion:@escaping (_ success: Bool) -> Void)
 }

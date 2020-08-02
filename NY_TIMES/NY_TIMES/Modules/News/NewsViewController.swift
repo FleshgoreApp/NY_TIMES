@@ -41,7 +41,7 @@ extension NewsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: presenter.item(at: indexPath), view: self)
+        cell.configure(with: presenter.item(at: indexPath), view: self, indexPath: indexPath)
         
         return cell
     }
@@ -50,8 +50,8 @@ extension NewsViewController: UITableViewDataSource {
 
 //MARK: - NewsCellDelegate
 extension NewsViewController: NewsCellDelegate {
-    func favoritesButtonDidClick(_ sender: UIButton) {
-        
+    func favoritesButtonDidClick(_ index: Int) {
+        presenter.favoritesButtonDidClick(index)
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  UIViewController+loadFromNib.swift
+//  UIViewController+LoadFromNib.swift
 //  111
 //
 //  Created by Saul Goodman on 22.07.2020.

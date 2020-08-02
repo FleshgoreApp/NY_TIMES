@@ -10,20 +10,22 @@ import UIKit
 import AlamofireImage
 
 protocol NewsCellDelegate: class {
-    func favoritesButtonDidClick(_ sender: UIButton)
+    func favoritesButtonDidClick(_ index: Int)
 }
 
 class NewsCell: UITableViewCell {
     
     static let cellID = "NewsCell"
     
-    @IBOutlet weak var updatedLabel: UILabel!
-    @IBOutlet weak var cellImageView: UIImageView!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var newsTextView: UITextView!
+    @IBOutlet private weak var favoritesButton: UIButton!
+    @IBOutlet private weak var updatedLabel: UILabel!
+    @IBOutlet private weak var cellImageView: UIImageView!
+    @IBOutlet private weak var authorLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var newsTextView: UITextView!
     
     private weak var delegate: NewsCellDelegate?
+    private var indexPath: IndexPath!
     
     //MARK: -
     override func awakeFromNib() {
@@ -45,12 +47,12 @@ class NewsCell: UITableViewCell {
     }
 
     //MARK: - Configuration
-    func configure(with item: NewsViewItemInterface, view: NewsCellDelegate? = nil) {
+    func configure(with item: NewsViewItemInterface, view: NewsCellDelegate? = nil, indexPath: IndexPath, hideFavoritesButton: Bool = false) {
         if let url = item.thumbnailURL {
             cellImageView.af_setImage(withURL: url, placeholderImage: UIImage(named: "noImage"), completion: nil)
         }
         else {
-            cellImageView.image = UIImage(named: "noImage")
+            cellImageView.image = item.thumbnailFromDB
         }
         
         updatedLabel.text = item.updatedDate
@@ -58,12 +60,15 @@ class NewsCell: UITableViewCell {
         newsTextView.text = item.news ?? ""
         titleLabel.text = item.newsTitle
         
+        self.indexPath = indexPath
         self.delegate = view
+        
+        favoritesButton.isHidden = hideFavoritesButton
     }
     
     //MARK: - Actions
     @IBAction func addToFavoritesDidClick(_ sender: UIButton) {
-        delegate?.favoritesButtonDidClick(sender)
+        delegate?.favoritesButtonDidClick(indexPath.row)
     }
     
     //MARK: - private

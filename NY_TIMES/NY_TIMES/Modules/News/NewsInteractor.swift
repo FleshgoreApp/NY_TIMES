@@ -12,6 +12,11 @@ import Foundation
 
 final class NewsInteractor {
     var network = Network(baseUrl: API.kUrlBaseString)
+    var databaseManager: DatabaseManager = CoreDataManager.shared
+    
+    deinit {
+        print("NewsInteractor deinited")
+    }
 }
 
 // MARK: - Extensions -
@@ -20,6 +25,13 @@ extension NewsInteractor: NewsInteractorInterface {
     func getNewsBy(category: NewsCategory, period: Int, completion: @escaping NewsResponseBlock) {
         network.getNewsBy(category: category, period: period) { (news, error) in
             completion(news, error)
+        }
+    }
+    
+    func addNewsToFavorites(news: [News]) {
+        databaseManager.addNews(news: news) { success, error in
+            print(success)
+            print(error?.localizedDescription ?? "")
         }
     }
 }

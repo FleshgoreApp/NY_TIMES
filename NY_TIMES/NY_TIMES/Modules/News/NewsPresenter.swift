@@ -38,6 +38,10 @@ final class NewsPresenter {
 
 // MARK: - EmailedPresenterInterface
 extension NewsPresenter: NewsPresenterInterface {
+    func favoritesButtonDidClick(_ index: Int) {
+        interactor.addNewsToFavorites(news: [ news[index] ])
+    }
+    
     func item(at indexPath: IndexPath) -> NewsViewItemInterface {
         return news[indexPath.row]
     }

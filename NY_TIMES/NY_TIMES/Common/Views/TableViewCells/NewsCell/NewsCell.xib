@@ -48,27 +48,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uF-gG-FJK" customClass="UITextViewFixed" customModule="NY_TIMES" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="120.5" width="294" height="354.5"/>
+                                <rect key="frame" x="0.0" y="120.5" width="294" height="344.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-gz-2it">
-                                <rect key="frame" x="244" y="475" width="50" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Zim-eK-Oo7"/>
-                                    <constraint firstAttribute="width" constant="50" id="xtC-nI-pna"/>
-                                </constraints>
-                                <state key="normal" image="favorites">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="addToFavoritesDidClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vqA-Uq-b9V"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Автор: Кори Тэйлор" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-Mv-7GE">
                                 <rect key="frame" x="90" y="25" width="204" height="14.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,25 +65,46 @@
                                 <color key="textColor" red="0.60784313729999995" green="0.65098039220000004" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqO-3t-m1t">
+                                <rect key="frame" x="0.0" y="475" width="294" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-gz-2it">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Zim-eK-Oo7"/>
+                                            <constraint firstAttribute="width" constant="50" id="xtC-nI-pna"/>
+                                        </constraints>
+                                        <state key="normal" image="favorites">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addToFavoritesDidClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vqA-Uq-b9V"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rqO-3t-m1t" firstAttribute="leading" secondItem="5uF-gG-FJK" secondAttribute="leading" id="16u-nH-H9E"/>
                             <constraint firstItem="63x-aA-dSL" firstAttribute="leading" secondItem="ROW-mV-tr2" secondAttribute="leading" id="4wQ-qB-Xv9"/>
                             <constraint firstItem="8wK-Mv-7GE" firstAttribute="top" secondItem="ixv-l6-G3u" secondAttribute="bottom" id="8tL-lQ-cGA"/>
                             <constraint firstItem="8wK-Mv-7GE" firstAttribute="trailing" secondItem="ixv-l6-G3u" secondAttribute="trailing" id="9Jt-FL-FQi"/>
+                            <constraint firstItem="rqO-3t-m1t" firstAttribute="trailing" secondItem="5uF-gG-FJK" secondAttribute="trailing" id="CdQ-VD-mqd"/>
+                            <constraint firstAttribute="bottom" secondItem="rqO-3t-m1t" secondAttribute="bottom" id="Dm4-cj-4rK"/>
                             <constraint firstItem="5uF-gG-FJK" firstAttribute="leading" secondItem="ROW-mV-tr2" secondAttribute="leading" id="P49-iz-hxZ"/>
                             <constraint firstAttribute="trailing" secondItem="5uF-gG-FJK" secondAttribute="trailing" id="WQk-uk-GPw"/>
+                            <constraint firstItem="rqO-3t-m1t" firstAttribute="top" secondItem="5uF-gG-FJK" secondAttribute="bottom" constant="10" id="YMr-Rn-ize"/>
                             <constraint firstItem="ixv-l6-G3u" firstAttribute="leading" secondItem="e5A-tm-bjt" secondAttribute="trailing" constant="15" id="aQ7-7b-EMA"/>
-                            <constraint firstItem="rjC-gz-2it" firstAttribute="top" secondItem="5uF-gG-FJK" secondAttribute="bottom" id="bRt-vB-nQX"/>
                             <constraint firstItem="e5A-tm-bjt" firstAttribute="leading" secondItem="ROW-mV-tr2" secondAttribute="leading" id="bTx-DU-Y4b"/>
                             <constraint firstItem="5uF-gG-FJK" firstAttribute="top" secondItem="63x-aA-dSL" secondAttribute="bottom" constant="5" id="dae-t0-Mf1"/>
                             <constraint firstItem="63x-aA-dSL" firstAttribute="top" secondItem="e5A-tm-bjt" secondAttribute="bottom" constant="15" id="hCi-WM-tg3"/>
-                            <constraint firstAttribute="trailing" secondItem="rjC-gz-2it" secondAttribute="trailing" id="hMg-WT-6CE"/>
                             <constraint firstItem="e5A-tm-bjt" firstAttribute="top" secondItem="ROW-mV-tr2" secondAttribute="top" constant="5" id="hNv-hE-FlH"/>
                             <constraint firstItem="ixv-l6-G3u" firstAttribute="top" secondItem="e5A-tm-bjt" secondAttribute="top" id="lNj-nO-5e8"/>
                             <constraint firstAttribute="trailing" secondItem="63x-aA-dSL" secondAttribute="trailing" id="pe5-Ov-nqh"/>
                             <constraint firstItem="8wK-Mv-7GE" firstAttribute="leading" secondItem="ixv-l6-G3u" secondAttribute="leading" id="py2-X8-1U5"/>
-                            <constraint firstAttribute="bottom" secondItem="rjC-gz-2it" secondAttribute="bottom" id="qrw-rd-owN"/>
+                            <constraint firstItem="rqO-3t-m1t" firstAttribute="centerX" secondItem="5uF-gG-FJK" secondAttribute="centerX" id="rFF-Zb-4ch"/>
                             <constraint firstAttribute="trailing" secondItem="ixv-l6-G3u" secondAttribute="trailing" id="xyy-o5-wGL"/>
                         </constraints>
                     </view>
@@ -114,6 +121,7 @@
             <connections>
                 <outlet property="authorLabel" destination="8wK-Mv-7GE" id="OuY-KW-xOD"/>
                 <outlet property="cellImageView" destination="e5A-tm-bjt" id="kfS-u0-v94"/>
+                <outlet property="favoritesButton" destination="rjC-gz-2it" id="4Oa-sE-6nN"/>
                 <outlet property="newsTextView" destination="5uF-gG-FJK" id="QXj-T1-ZEi"/>
                 <outlet property="titleLabel" destination="63x-aA-dSL" id="pG5-Wt-fdT"/>
                 <outlet property="updatedLabel" destination="ixv-l6-G3u" id="rWt-qg-mwe"/>

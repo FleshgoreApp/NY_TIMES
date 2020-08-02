@@ -11,9 +11,21 @@
 import Foundation
 
 final class FavoritesInteractor {
+    var databaseManager: DatabaseManager = CoreDataManager.shared
 }
 
 // MARK: - Extensions -
 
 extension FavoritesInteractor: FavoritesInteractorInterface {
+    func getNews(completion: @escaping ([News]?) -> Void) {
+        databaseManager.getNews { news in
+            completion(news)
+        }
+    }
+    
+    func deleteNews(news: [News], completion: @escaping (Bool) -> Void) {
+        databaseManager.deleteNews(news: news) { success in
+            completion(success)
+        }
+    }
 }
