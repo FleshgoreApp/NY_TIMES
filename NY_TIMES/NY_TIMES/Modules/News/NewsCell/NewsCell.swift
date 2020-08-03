@@ -63,6 +63,7 @@ class NewsCell: UITableViewCell {
         self.indexPath = indexPath
         self.delegate = view
         
+        setFavoritesButtonColor(isFavorites: item.isFavoritesNews)
         favoritesButton.isHidden = hideFavoritesButton
     }
     
@@ -77,4 +78,9 @@ class NewsCell: UITableViewCell {
         newsTextView.font = Font.kCellNews
     }
     
+    private func setFavoritesButtonColor(isFavorites: Bool) {
+        if let imageView = favoritesButton.imageView {
+            imageView.setTintColor(isFavorites ? UIColor.red : UIColor.darkGray)
+        }
+    }
 }

@@ -20,7 +20,8 @@ extension UIViewController {
             let view = UIImageView()
             view.tag = tag
             view.image = UIImage(named: "noConnection")
-            view.alpha = 0.08 //TODO image tintColor
+            view.setTintColor(UIColor.lightGray)
+            view.alpha = 0.5
             view.translatesAutoresizingMaskIntoConstraints = false
             
             self.view.addSubview(view)

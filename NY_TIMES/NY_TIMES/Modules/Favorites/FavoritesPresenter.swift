@@ -69,8 +69,10 @@ extension FavoritesPresenter: FavoritesPresenterInterface {
         interactor.getNews { [weak self] news in
             if let news = news {
                 self?.news = news
-                self?.view.reloadData()
             }
+            else { self?.news = [News]() }
+            
+            self?.view.reloadData()
         }
     }
 }

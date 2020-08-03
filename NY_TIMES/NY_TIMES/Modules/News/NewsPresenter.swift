@@ -18,6 +18,8 @@ final class NewsPresenter {
     private let interactor: NewsInteractorInterface
     private let wireframe: NewsWireframeInterface
     
+    private var isNeedUpdateAfterNoConnection = false
+    
     var news = [News]() {
         didSet {
             view.endRefreshing()
@@ -35,6 +37,41 @@ final class NewsPresenter {
         self.wireframe = wireframe
         self.type = type
     }
+    
+    //MARK: - private
+    private func getNews() {
+        guard Reachability.isConnectedToNetwork() else {
+            isNeedUpdateAfterNoConnection = true
+            news = [News]()
+            view.endRefreshing()
+            view.setLoadingVisible(false)
+            view.setNoConnectionVisible(true)
+            return
+        }
+        
+        view.setNoConnectionVisible(false)
+        
+        interactor.getNewsBy(category: self.type, period: 30) { [weak self] (news, error) in
+            
+            self?.view.setLoadingVisible(false)
+            
+            if let news = news {
+                self?.news = news.sorted(by: { $0.updated! > $1.updated! })
+                self?.isNeedUpdateAfterNoConnection = false
+            }
+            else if let _ = error {
+                
+            }
+        }
+    }
+    
+    private func deleteFromFavorites(index: Int) {
+        interactor.deleteNews(news: [news[index]]) { [weak self] success in
+            if success {
+                self?.view.reloadData()
+            }
+        }
+    }
 }
 
 // MARK: - EmailedPresenterInterface
@@ -44,7 +81,20 @@ extension NewsPresenter: NewsPresenterInterface {
     }
     
     func favoritesButtonDidClick(_ index: Int) {
-        interactor.addNewsToFavorites(news: [ news[index] ])
+        interactor.addNewsToFavorites(news: news[index]) { [weak self] success, error in
+            if success {
+                self?.view.reloadData()
+            }
+            else if let err = error {
+                
+                switch err {
+                case CoreDataError.suchRecordExists:
+                    self?.deleteFromFavorites(index: index)
+                default:
+                    break
+                }
+            }
+        }
     }
     
     func item(at indexPath: IndexPath) -> NewsViewItemInterface {
@@ -57,34 +107,21 @@ extension NewsPresenter: NewsPresenterInterface {
         getNews()
     }
     
+    func viewWillAppear() {
+        if isNeedUpdateAfterNoConnection {
+            view.setLoadingVisible(true)
+            refreshData()
+        }
+        else {
+            view.reloadData()
+        }
+    }
+    
     func numberOfItems(in section: Int) -> Int {
         return news.count
     }
     
     func didSelectRowAtIndexPath(_ indexPath: IndexPath) {
         wireframe.navigate(to: .details(news[indexPath.row]))
-    }
-    
-    private func getNews() {
-        guard Reachability.isConnectedToNetwork() else {
-            news = [News]()
-            view.endRefreshing()
-            view.setLoadingVisible(false)
-            view.setNoConnectionVisible(true)
-            return
-        }
-        
-        interactor.getNewsBy(category: self.type, period: 30) { [weak self] (news, error) in
-            
-            self?.view.setLoadingVisible(false)
-            
-            if let news = news {
-                self?.news = news.sorted(by: { $0.updated! > $1.updated! })
-                self?.view.setNoConnectionVisible(false)
-            }
-            else if let _ = error {
-                
-            }
-        }
     }
 }

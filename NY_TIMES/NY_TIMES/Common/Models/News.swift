@@ -34,6 +34,7 @@ struct News {
     var createdToDB:         Double? = nil
     var imageDataFromDB:     Data? = nil
     var thumbnailDataFromDB: Data? = nil
+    var isFavorites: Bool = false
 }
 
 extension News: JSONParseable {
@@ -108,6 +109,7 @@ protocol NewsViewItemInterface {
     var news: String? { get }
     var imageFromDB: UIImage { get }
     var thumbnailFromDB: UIImage { get }
+    var isFavoritesNews: Bool { get }
 }
 
 extension News: NewsViewItemInterface {
@@ -152,5 +154,9 @@ extension News: NewsViewItemInterface {
             return UIImage(named: "noImage") ?? UIImage()
         }
         return UIImage(data: data) ?? UIImage()
+    }
+    
+    var isFavoritesNews: Bool {
+        return CoreDataManager.shared.isFavoritesNews(id ?? 0)
     }
 }

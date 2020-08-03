@@ -28,6 +28,14 @@ final class NewsViewController: BaseViewController {
         presenter.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.viewWillAppear()
+    }
+    
+    
+    //MARK: - private
     private func setupTableView() {
         tableView?.basicSettingsWith(self, actionRC: #selector(refreshData))
     }

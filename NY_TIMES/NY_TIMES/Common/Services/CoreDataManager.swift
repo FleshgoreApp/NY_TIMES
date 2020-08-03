@@ -11,6 +11,7 @@ import CoreData
 
 enum CoreDataError: Error {
     case addToFavoritesFailure
+    case suchRecordExists
 }
 
 extension CoreDataError: LocalizedError {
@@ -18,12 +19,15 @@ extension CoreDataError: LocalizedError {
         switch self {
         case .addToFavoritesFailure:
             return NSLocalizedString("An error occurred while adding news to the database", comment: "")
+        case .suchRecordExists:
+            return NSLocalizedString("Such record already exists in the database", comment: "")
         }
     }
 }
 
 protocol DatabaseManager: class {
-    func addNews(news: [News], completion: @escaping (_ success: Bool, _ error: Error?) -> Void)
+    func isFavoritesNews(_ newsID: Int) -> Bool
+    func addNews(news: News, completion: @escaping (_ success: Bool, _ error: Error?) -> Void)
     func getNews(completion:@escaping (_ news: [News]?) -> Void)
     func deleteNews(news: [News], completion: @escaping (Bool) -> Void)
 }
@@ -52,40 +56,44 @@ final class CoreDataManager: DatabaseManager {
     private var entityName = CoreDataConstants.kNewsEntityName
     
     // MARK: - Open
-    func addNews(news: [News], completion: @escaping AddNewsHandler) {
+    func addNews(news: News, completion: @escaping AddNewsHandler) {
+        let check = checkClone(id: news.id ?? 0)
+        guard check else {
+            completion(false, CoreDataError.suchRecordExists)
+            return
+        }
+        
         let container = self.persistentContainer
         container.performBackgroundTask { (context) in
             guard let entity = NSEntityDescription.entity(forEntityName: self.entityName, in: context) else {
-                completion(false, nil)
-                    return
+                completion(false, CoreDataError.addToFavoritesFailure)
+                return
             }
             
-            for n in news {
-                let value = NSManagedObject(entity: entity, insertInto: context)
-                
-                guard let ID = n.id else {
-                    completion(false, CoreDataError.addToFavoritesFailure)
-                    return
-                }
-                
-                let createdTime = Date.currentTimeMillis()
-                let imageData   = Data.getImageDataFrom(url: n.imageURL)
-                let thumbnailData = Data.getImageDataFrom(url: n.thumbnailURL)
-                
-                value.setValue(ID, forKeyPath: "id") //int
-                value.setValue(createdTime, forKeyPath: "createdTime") //double
-                value.setValue(n.abstract ?? "", forKeyPath: "news")  //String
-                value.setValue(n.title ?? "", forKeyPath: "title") //String
-                value.setValue(imageData, forKeyPath: "image") //Data
-                value.setValue(thumbnailData, forKeyPath: "thumbnail") //Data
+            let value = NSManagedObject(entity: entity, insertInto: context)
+            
+            guard let ID = news.id else {
+                completion(false, CoreDataError.addToFavoritesFailure)
+                return
             }
+            
+            let createdTime = Date.currentTimeMillis()
+            let imageData   = Data.getImageDataFrom(url: news.imageURL)
+            let thumbnailData = Data.getImageDataFrom(url: news.thumbnailURL)
+            
+            value.setValue(ID, forKeyPath: "id") //int
+            value.setValue(createdTime, forKeyPath: "createdTime") //double
+            value.setValue(news.abstract ?? "", forKeyPath: "news")  //String
+            value.setValue(news.title ?? "", forKeyPath: "title") //String
+            value.setValue(imageData, forKeyPath: "image") //Data
+            value.setValue(thumbnailData, forKeyPath: "thumbnail") //Data
             
             do {
                 try context.save()
             }
             catch let error as NSError {
                 let _ = error
-                completion(false, error)
+                completion(false, CoreDataError.addToFavoritesFailure)
             }
             
             completion(true, nil)
@@ -134,6 +142,10 @@ final class CoreDataManager: DatabaseManager {
         }
     }
     
+    func isFavoritesNews(_ newsID: Int) -> Bool {
+        return !checkClone(id: newsID)
+    }
+    
     //MARK: - Private
     private func getNewsFrom(entity: NSManagedObject) -> News? {
         if let ID = entity.value(forKey: "id") as? Int {
@@ -147,6 +159,19 @@ final class CoreDataManager: DatabaseManager {
             return News(uri: nil, url: nil, id: ID, asset_id: nil, source: nil, published_date: nil, updated: nil, section: nil, subsection: nil, nytdsection: nil, adx_keywords: nil, byline: nil, type: nil, title: title, abstract: news, des_facet: nil, org_facet: nil, per_facet: nil, geo_facet: nil, media: nil, eta_id: nil, createdToDB: createdTime, imageDataFromDB: image, thumbnailDataFromDB: thumbnail)
         }
         return nil
+    }
+    
+    private func checkClone(id: Int) -> Bool {
+        guard let newsArray = CoreDataManager.shared.getAllRecordsWith(entityName) else { return false }
+        for news in newsArray {
+            guard let ID = news.value(forKey: "id") as? Int else {
+                return false
+            }
+            if ID == id {
+                return false
+            }
+        }
+        return true
     }
     
     private func getAllRecordsWith(_ entityName: String) -> [NSManagedObject]? {

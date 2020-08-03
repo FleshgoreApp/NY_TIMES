@@ -26,6 +26,7 @@ struct API {
 struct AlertString {
     static let kOkTitle = "Ok"
     static let kError = "Error"
+    static let kMessage = "Message"
 }
 
 //MARK: - FontSize

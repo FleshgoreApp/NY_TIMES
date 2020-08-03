@@ -40,7 +40,7 @@ class CustomActivityIndicatorView: UIView {
                 AI = UIActivityIndicatorView()
             }
             
-            AI.color = UIColor.systemBlue //UIColor.white
+            AI.color = UIColor.lightGray //UIColor.white
             AI.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(AI)
             AI.centerYAnchor.constraint(equalTo: layer.centerYAnchor).isActive = true

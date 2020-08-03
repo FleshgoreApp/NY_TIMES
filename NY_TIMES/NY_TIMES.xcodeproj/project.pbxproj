@@ -60,6 +60,7 @@
 		3A839CD624D581CE000496D3 /* Data+GetImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD524D581CE000496D3 /* Data+GetImageData.swift */; };
 		3A839CDA24D6A7C8000496D3 /* UIViewController+NoConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD924D6A7C8000496D3 /* UIViewController+NoConnection.swift */; };
 		3A839CDD24D7DD3A000496D3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CDC24D7DD3A000496D3 /* Reachability.swift */; };
+		3A839CDF24D7E95C000496D3 /* ImageView+SetTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CDE24D7E95C000496D3 /* ImageView+SetTintColor.swift */; };
 		3AE6BA5F24D2A2E4000E3598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA5E24D2A2E4000E3598 /* AppDelegate.swift */; };
 		3AE6BA6124D2A2E4000E3598 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA6024D2A2E4000E3598 /* SceneDelegate.swift */; };
 		3AE6BA6924D2A2E4000E3598 /* NY_TIMES.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA6724D2A2E4000E3598 /* NY_TIMES.xcdatamodeld */; };
@@ -121,6 +122,7 @@
 		3A839CD524D581CE000496D3 /* Data+GetImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+GetImageData.swift"; sourceTree = "<group>"; };
 		3A839CD924D6A7C8000496D3 /* UIViewController+NoConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NoConnection.swift"; sourceTree = "<group>"; };
 		3A839CDC24D7DD3A000496D3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		3A839CDE24D7E95C000496D3 /* ImageView+SetTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+SetTintColor.swift"; sourceTree = "<group>"; };
 		3AE6BA5B24D2A2E4000E3598 /* NY_TIMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NY_TIMES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE6BA5E24D2A2E4000E3598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE6BA6024D2A2E4000E3598 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				3A839CD324D57E33000496D3 /* Date+CurrentTimeMillis.swift */,
 				3A839CD524D581CE000496D3 /* Data+GetImageData.swift */,
 				3A839CD924D6A7C8000496D3 /* UIViewController+NoConnection.swift */,
+				3A839CDE24D7E95C000496D3 /* ImageView+SetTintColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 		3A71C05F24D2CC620016B285 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				3A71C0A324D303E20016B285 /* NewsCell */,
 				3A71C05324D2CC590016B285 /* NewsInterfaces.swift */,
 				3A71C05424D2CC590016B285 /* NewsPresenter.swift */,
 				3A71C05524D2CC590016B285 /* NewsViewController.swift */,
@@ -287,6 +291,7 @@
 		3A71C07E24D2E2380016B285 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				3A71C0A424D309E70016B285 /* NewsDetailCell */,
 				3A71C07F24D2E2550016B285 /* DetailInterfaces.swift */,
 				3A71C08024D2E2550016B285 /* DetailPresenter.swift */,
 				3A71C08124D2E2550016B285 /* DetailViewController.swift */,
@@ -323,18 +328,8 @@
 			children = (
 				3A839CCB24D4A0A4000496D3 /* CustomActivityView.swift */,
 				3A839CCF24D53F05000496D3 /* UITextViewFixed.swift */,
-				3A71C09E24D302940016B285 /* TableViewCells */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		3A71C09E24D302940016B285 /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				3A71C0A424D309E70016B285 /* NewsDetailCell */,
-				3A71C0A324D303E20016B285 /* NewsCell */,
-			);
-			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		3A71C0A324D303E20016B285 /* NewsCell */ = {
@@ -538,6 +533,7 @@
 				3A71C04924D2B74B0016B285 /* MainWireframe.swift in Sources */,
 				3A839CD624D581CE000496D3 /* Data+GetImageData.swift in Sources */,
 				3A71C03924D2B6740016B285 /* FormatterInterface.swift in Sources */,
+				3A839CDF24D7E95C000496D3 /* ImageView+SetTintColor.swift in Sources */,
 				3A71C05024D2BF360016B285 /* BaseTabBarController.swift in Sources */,
 				3A71C04624D2B74B0016B285 /* MainViewController.swift in Sources */,
 				3AE6BA6924D2A2E4000E3598 /* NY_TIMES.xcdatamodeld in Sources */,
