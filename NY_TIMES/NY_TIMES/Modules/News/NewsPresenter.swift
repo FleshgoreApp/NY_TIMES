@@ -66,6 +66,14 @@ extension NewsPresenter: NewsPresenterInterface {
     }
     
     private func getNews() {
+        guard Reachability.isConnectedToNetwork() else {
+            news = [News]()
+            view.endRefreshing()
+            view.setLoadingVisible(false)
+            view.setNoConnectionVisible(true)
+            return
+        }
+        
         interactor.getNewsBy(category: self.type, period: 30) { [weak self] (news, error) in
             
             self?.view.setLoadingVisible(false)
@@ -74,16 +82,8 @@ extension NewsPresenter: NewsPresenterInterface {
                 self?.news = news.sorted(by: { $0.updated! > $1.updated! })
                 self?.view.setNoConnectionVisible(false)
             }
-            else if let err = error {
-                self?.view.endRefreshing()
+            else if let _ = error {
                 
-                switch err._code {
-                case -1009:
-                    self?.news = [News]()
-                    self?.view.setNoConnectionVisible(true)
-                default:
-                    self?.view.setNoConnectionVisible(false)
-                }
             }
         }
     }

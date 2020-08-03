@@ -59,6 +59,7 @@
 		3A839CD424D57E33000496D3 /* Date+CurrentTimeMillis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD324D57E33000496D3 /* Date+CurrentTimeMillis.swift */; };
 		3A839CD624D581CE000496D3 /* Data+GetImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD524D581CE000496D3 /* Data+GetImageData.swift */; };
 		3A839CDA24D6A7C8000496D3 /* UIViewController+NoConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD924D6A7C8000496D3 /* UIViewController+NoConnection.swift */; };
+		3A839CDD24D7DD3A000496D3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CDC24D7DD3A000496D3 /* Reachability.swift */; };
 		3AE6BA5F24D2A2E4000E3598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA5E24D2A2E4000E3598 /* AppDelegate.swift */; };
 		3AE6BA6124D2A2E4000E3598 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA6024D2A2E4000E3598 /* SceneDelegate.swift */; };
 		3AE6BA6924D2A2E4000E3598 /* NY_TIMES.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AE6BA6724D2A2E4000E3598 /* NY_TIMES.xcdatamodeld */; };
@@ -119,6 +120,7 @@
 		3A839CD324D57E33000496D3 /* Date+CurrentTimeMillis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CurrentTimeMillis.swift"; sourceTree = "<group>"; };
 		3A839CD524D581CE000496D3 /* Data+GetImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+GetImageData.swift"; sourceTree = "<group>"; };
 		3A839CD924D6A7C8000496D3 /* UIViewController+NoConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NoConnection.swift"; sourceTree = "<group>"; };
+		3A839CDC24D7DD3A000496D3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3AE6BA5B24D2A2E4000E3598 /* NY_TIMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NY_TIMES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE6BA5E24D2A2E4000E3598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE6BA6024D2A2E4000E3598 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		3A71C02F24D2B5BA0016B285 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3A839CDB24D7DD3A000496D3 /* Utilites */,
 				3A71C0A924D341CC0016B285 /* Services */,
 				3A71C09D24D302860016B285 /* Views */,
 				3A71C08B24D2E78C0016B285 /* Enums */,
@@ -359,6 +362,14 @@
 				3A71C0AA24D341F90016B285 /* Network.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3A839CDB24D7DD3A000496D3 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				3A839CDC24D7DD3A000496D3 /* Reachability.swift */,
+			);
+			path = Utilites;
 			sourceTree = "<group>";
 		};
 		3AE6BA5224D2A2E4000E3598 = {
@@ -549,6 +560,7 @@
 				3A71C08A24D2E2550016B285 /* DetailWireframe.swift in Sources */,
 				3A71C08824D2E2550016B285 /* DetailInteractor.swift in Sources */,
 				3A839CDA24D6A7C8000496D3 /* UIViewController+NoConnection.swift in Sources */,
+				3A839CDD24D7DD3A000496D3 /* Reachability.swift in Sources */,
 				3AE6BA6124D2A2E4000E3598 /* SceneDelegate.swift in Sources */,
 				3A839CCE24D4A143000496D3 /* UIView+Extension.swift in Sources */,
 				3A71C09924D2F76A0016B285 /* FavoritesViewController.swift in Sources */,
