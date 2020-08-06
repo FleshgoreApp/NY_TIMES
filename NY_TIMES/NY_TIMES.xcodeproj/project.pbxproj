@@ -55,7 +55,7 @@
 		3A839CCC24D4A0A4000496D3 /* CustomActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CCB24D4A0A4000496D3 /* CustomActivityView.swift */; };
 		3A839CCE24D4A143000496D3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CCD24D4A143000496D3 /* UIView+Extension.swift */; };
 		3A839CD024D53F05000496D3 /* UITextViewFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CCF24D53F05000496D3 /* UITextViewFixed.swift */; };
-		3A839CD224D56F5D000496D3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD124D56F5D000496D3 /* CoreDataManager.swift */; };
+		3A839CD224D56F5D000496D3 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD124D56F5D000496D3 /* CoreData.swift */; };
 		3A839CD424D57E33000496D3 /* Date+CurrentTimeMillis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD324D57E33000496D3 /* Date+CurrentTimeMillis.swift */; };
 		3A839CD624D581CE000496D3 /* Data+GetImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD524D581CE000496D3 /* Data+GetImageData.swift */; };
 		3A839CDA24D6A7C8000496D3 /* UIViewController+NoConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839CD924D6A7C8000496D3 /* UIViewController+NoConnection.swift */; };
@@ -117,7 +117,7 @@
 		3A839CCB24D4A0A4000496D3 /* CustomActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivityView.swift; sourceTree = "<group>"; };
 		3A839CCD24D4A143000496D3 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3A839CCF24D53F05000496D3 /* UITextViewFixed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewFixed.swift; sourceTree = "<group>"; };
-		3A839CD124D56F5D000496D3 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3A839CD124D56F5D000496D3 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		3A839CD324D57E33000496D3 /* Date+CurrentTimeMillis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CurrentTimeMillis.swift"; sourceTree = "<group>"; };
 		3A839CD524D581CE000496D3 /* Data+GetImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+GetImageData.swift"; sourceTree = "<group>"; };
 		3A839CD924D6A7C8000496D3 /* UIViewController+NoConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NoConnection.swift"; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 		3A71C0A924D341CC0016B285 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3A839CD124D56F5D000496D3 /* CoreDataManager.swift */,
+				3A839CD124D56F5D000496D3 /* CoreData.swift */,
 				3A71C0AA24D341F90016B285 /* Network.swift */,
 			);
 			path = Services;
@@ -564,7 +564,7 @@
 				3A839CCC24D4A0A4000496D3 /* CustomActivityView.swift in Sources */,
 				3A71C04424D2B74B0016B285 /* MainInterfaces.swift in Sources */,
 				3A71C0A724D30A930016B285 /* NewsDetailCell.swift in Sources */,
-				3A839CD224D56F5D000496D3 /* CoreDataManager.swift in Sources */,
+				3A839CD224D56F5D000496D3 /* CoreData.swift in Sources */,
 				3A71C05C24D2CC590016B285 /* NewsInteractor.swift in Sources */,
 				3A71C05B24D2CC590016B285 /* NewsViewController.swift in Sources */,
 				3A71C04E24D2BF360016B285 /* BaseViewController.swift in Sources */,

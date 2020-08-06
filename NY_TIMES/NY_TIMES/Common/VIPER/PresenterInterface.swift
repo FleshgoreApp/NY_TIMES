@@ -9,7 +9,13 @@
 import UIKit
 
 protocol PresenterInterface: class {
+    func viewDidLoad()
+    func viewWillAppear()
+    func numberOfItems(in section: Int) -> Int
+    func didSelectRowAtIndexPath(_ indexPath: IndexPath)
 }
 
 extension PresenterInterface {
+    func viewWillAppear() {}
+    func didSelectRowAtIndexPath(_ indexPath: IndexPath) {}
 }

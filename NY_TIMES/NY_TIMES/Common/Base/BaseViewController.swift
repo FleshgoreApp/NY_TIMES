@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class BaseViewController: UIViewController {
     //MARK - properties
@@ -22,6 +23,13 @@ class BaseViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { dataTasks, uploadTasks, downloadTasks in
+            dataTasks.forEach { $0.cancel() }
+            uploadTasks.forEach { $0.cancel() }
+            downloadTasks.forEach { $0.cancel() }
+        }
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     

@@ -11,7 +11,7 @@
 import Foundation
 
 final class FavoritesInteractor {
-    var databaseManager: DatabaseManager = CoreDataManager.shared
+    var databaseManager: DatabaseProtocol = CoreData.shared
 }
 
 // MARK: - Extensions -

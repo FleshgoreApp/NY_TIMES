@@ -21,17 +21,13 @@ protocol FavoritesViewInterface: ViewInterface {
 }
 
 protocol FavoritesPresenterInterface: PresenterInterface {
-    func viewWillAppear()
     func trailingSwipeActionsForRowAt(indexPath: IndexPath)
     func item(at indexPath: IndexPath) -> NewsViewItemInterface
-    func didSelectRowAtIndexPath(_ indexPath: IndexPath)
     var  news: [News] { get }
-    func viewDidLoad()
-    func numberOfItems(in section: Int) -> Int
 }
 
 protocol FavoritesInteractorInterface: InteractorInterface {
-    var  databaseManager: DatabaseManager { get }
+    var  databaseManager: DatabaseProtocol { get }
     func getNews(completion:@escaping (_ news: [News]?) -> Void)
     func deleteNews(news: [News], completion:@escaping (_ success: Bool) -> Void)
 }

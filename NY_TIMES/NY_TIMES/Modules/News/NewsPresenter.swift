@@ -17,6 +17,7 @@ final class NewsPresenter {
     private unowned let view: NewsViewInterface
     private let interactor: NewsInteractorInterface
     private let wireframe: NewsWireframeInterface
+    private var timer: Timer?
     
     private var isNeedUpdateAfterNoConnection = false
     
@@ -49,11 +50,13 @@ final class NewsPresenter {
             return
         }
         
+        setTimer()
         view.setNoConnectionVisible(false)
         
         interactor.getNewsBy(category: self.type, period: 30) { [weak self] (news, error) in
             
             self?.view.setLoadingVisible(false)
+            self?.timer?.invalidate()
             
             if let news = news {
                 self?.news = news.sorted(by: { $0.updated! > $1.updated! })
@@ -71,6 +74,14 @@ final class NewsPresenter {
                 self?.view.reloadData()
             }
         }
+    }
+    
+    private func setTimer() {
+        self.timer = Timer.scheduledTimer(withTimeInterval: 20, repeats: false, block: { [weak self] timer in
+            
+            self?.view.endRefreshing()
+            timer.invalidate()
+        })
     }
 }
 

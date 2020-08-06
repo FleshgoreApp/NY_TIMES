@@ -157,6 +157,6 @@ extension News: NewsViewItemInterface {
     }
     
     var isFavoritesNews: Bool {
-        return CoreDataManager.shared.isFavoritesNews(id ?? 0)
+        return CoreData.shared.isFavoritesNews(id ?? 0)
     }
 }

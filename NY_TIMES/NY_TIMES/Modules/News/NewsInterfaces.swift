@@ -25,18 +25,14 @@ protocol NewsViewInterface: ViewInterface {
 
 protocol NewsPresenterInterface: PresenterInterface {
     func refreshData()
-    func item(at indexPath: IndexPath) -> NewsViewItemInterface
-    func didSelectRowAtIndexPath(_ indexPath: IndexPath)
-    var  news: [News] { get }
-    func viewDidLoad()
-    func viewWillAppear()
-    func numberOfItems(in section: Int) -> Int
     func favoritesButtonDidClick(_ index: Int)
+    func item(at indexPath: IndexPath) -> NewsViewItemInterface
+    var  news: [News] { get }
 }
 
 protocol NewsInteractorInterface: InteractorInterface {
     var  network: Network { get }
-    var  databaseManager: DatabaseManager { get }
+    var  databaseManager: DatabaseProtocol { get }
     func getNewsBy(category: NewsCategory, period: Int, completion:@escaping NewsResponseBlock)
     func addNewsToFavorites(news: News, completion:@escaping (_ success: Bool, _ error: Error?) -> Void)
     func deleteNews(news: [News], completion: @escaping (Bool) -> Void)

@@ -16,7 +16,7 @@ protocol MainWireframeInterface: WireframeInterface {
 protocol MainViewInterface: ViewInterface {
 }
 
-protocol MainPresenterInterface: PresenterInterface {
+protocol MainPresenterInterface {
 }
 
 protocol MainInteractorInterface: InteractorInterface {

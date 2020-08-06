@@ -12,7 +12,7 @@ import Foundation
 
 final class NewsInteractor {
     var network = Network(baseUrl: API.kUrlBaseString)
-    var databaseManager: DatabaseManager = CoreDataManager.shared
+    var databaseManager: DatabaseProtocol = CoreData.shared
 }
 
 // MARK: - Extensions -
